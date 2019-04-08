@@ -1,14 +1,20 @@
 {
-  "name": "Elastic-Beanstalk-Sample-App",
+  "name": "Easy-Contracts",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "ejs": "latest",
     "aws-sdk": "latest",
-    "express": "latest",
-    "body-parser": "latest"
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "ejs": "latest",
+    "express": "^4.16.4",
+    "jsforce": "^1.9.1",
+    "nodemailer": "^5.1.1",
+    "pg": "^7.8.1"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   }
 }
