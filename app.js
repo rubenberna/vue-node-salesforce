@@ -1,5 +1,10 @@
 // Include the cluster module
 const cluster = require('cluster');
+// Load Routes
+const contracts = require('./routes/contracts');
+const query = require('./routes/query');
+const update = require('./routes/update');
+const emailservice = require('./routes/emailservice');
 
 // Code to run if we're in the master process
 if (cluster.isMaster) {
@@ -32,12 +37,6 @@ if (cluster.isMaster) {
     const sns = new AWS.SNS();
     const ddb = new AWS.DynamoDB();
 
-    // Load Routes
-    const contracts = require('./routes/contracts');
-    const query = require('./routes/query');
-    const update = require('./routes/update');
-    const emailservice = require('./routes/emailservice');
-    
     const ddbTable =  process.env.STARTUP_SIGNUP_TABLE;
     const snsTopic =  process.env.NEW_SIGNUP_TOPIC;
     const app = express();
