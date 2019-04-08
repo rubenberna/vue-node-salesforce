@@ -28,6 +28,8 @@ class ContractService {
         "Content-Type": "application/json"
       }
     })
+    .then( res => res )
+    .catch( err => err )
   }
 
   static addEmail(contact) {
