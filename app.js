@@ -31,10 +31,10 @@ if (cluster.isMaster) {
     const AWS = require('aws-sdk');
     const express = require('express');
     const bodyParser = require('body-parser');
-    const cors = require('cors');
-    const session = require('express-session');
+    // const cors = require('cors');
+    // const session = require('express-session');
     // const salesforce = require('./config/salesforce');
-    const dotenv = require('dotenv');
+    // const dotenv = require('dotenv');
     // dotenv.config();
 
     AWS.config.region = process.env.REGION
@@ -48,7 +48,7 @@ if (cluster.isMaster) {
 
     app.set('view engine', 'ejs');
     app.set('views', __dirname + '/views');
-    // app.use(bodyParser.urlencoded({extended:false}));
+    app.use(bodyParser.urlencoded({extended:false}));
 
     // Middleware
     // app.use(bodyParser.json({limit: '50mb', extended: true}))
