@@ -1,10 +1,10 @@
 // Include the cluster module
 const cluster = require('cluster');
 // Load Routes
-const contracts = require('./routes/contracts');
-const query = require('./routes/query');
-const update = require('./routes/update');
-const emailservice = require('./routes/emailservice');
+// const contracts = require('./routes/contracts');
+// const query = require('./routes/query');
+// const update = require('./routes/update');
+// const emailservice = require('./routes/emailservice');
 
 // Code to run if we're in the master process
 if (cluster.isMaster) {
@@ -31,6 +31,10 @@ if (cluster.isMaster) {
     const AWS = require('aws-sdk');
     const express = require('express');
     const bodyParser = require('body-parser');
+    const cors = require('cors');
+    const salesforce = require('./config/salesforce');
+    const dotenv = require('dotenv');
+    dotenv.config();
 
     AWS.config.region = process.env.REGION
 
