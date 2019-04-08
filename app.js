@@ -66,8 +66,8 @@ if (cluster.isMaster) {
     app.use('/update', update);
     app.use('/emailservice', emailservice);
 
-    // app.set('view engine', 'ejs');
-    // app.set('views', __dirname + '/views');
+    app.set('view engine', 'ejs');
+    app.set('views', __dirname + '/views');
     // app.use(bodyParser.urlencoded({extended:false}));
 
     app.get('/', function(req, res) {
@@ -78,7 +78,7 @@ if (cluster.isMaster) {
         });
     });
 
-    
+
 
     // app.post('/signup', function(req, res) {
     //     const item = {
