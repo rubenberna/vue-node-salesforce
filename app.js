@@ -45,7 +45,6 @@ if (cluster.isMaster) {
     const emailservice = require('./routes/emailservice');
 
     //AWS stuff
-
     AWS.config.region = process.env.REGION
     const sns = new AWS.SNS();
     const ddb = new AWS.DynamoDB();
@@ -72,6 +71,11 @@ if (cluster.isMaster) {
       token: null // salesforce
     }));
 
+    // Use Routes
+    app.use('/contracts', contracts);
+    app.use('/query', query);
+    app.use('/update', update);
+    app.use('/emailservice', emailservice);
 
     app.get('/', function(req, res) {
         res.render('index', {
