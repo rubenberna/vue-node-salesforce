@@ -80,45 +80,45 @@ if (cluster.isMaster) {
 
 
 
-    // app.post('/signup', function(req, res) {
-    //     const item = {
-    //         'email': {'S': req.body.email},
-    //         'name': {'S': req.body.name},
-    //         'preview': {'S': req.body.previewAccess},
-    //         'theme': {'S': req.body.theme}
-    //     };
+    app.post('/signup', function(req, res) {
+        const item = {
+            'email': {'S': req.body.email},
+            'name': {'S': req.body.name},
+            'preview': {'S': req.body.previewAccess},
+            'theme': {'S': req.body.theme}
+        };
 
-        // ddb.putItem({
-        //     'TableName': ddbTable,
-        //     'Item': item,
-        //     'Expected': { email: { Exists: false } }
-        // }, function(err, data) {
-        //     if (err) {
-        //         const returnStatus = 500;
-        //
-        //         if (err.code === 'ConditionalCheckFailedException') {
-        //             returnStatus = 409;
-        //         }
-        //
-        //         res.status(returnStatus).end();
-        //         console.log('DDB Error: ' + err);
-        //     } else {
-        //         sns.publish({
-        //             'Message': 'Name: ' + req.body.name + "\r\nEmail: " + req.body.email
-        //                                 + "\r\nPreviewAccess: " + req.body.previewAccess
-        //                                 + "\r\nTheme: " + req.body.theme,
-        //             'Subject': 'New user sign up!!!',
-        //             'TopicArn': snsTopic
-        //         }, function(err, data) {
-        //             if (err) {
-        //                 res.status(500).end();
-        //                 console.log('SNS Error: ' + err);
-        //             } else {
-        //                 res.status(201).end();
-        //             }
-        //         });
-        //     }
-        // });
+        ddb.putItem({
+            'TableName': ddbTable,
+            'Item': item,
+            'Expected': { email: { Exists: false } }
+        }, function(err, data) {
+            if (err) {
+                const returnStatus = 500;
+
+                if (err.code === 'ConditionalCheckFailedException') {
+                    returnStatus = 409;
+                }
+
+                res.status(returnStatus).end();
+                console.log('DDB Error: ' + err);
+            } else {
+                sns.publish({
+                    'Message': 'Name: ' + req.body.name + "\r\nEmail: " + req.body.email
+                                        + "\r\nPreviewAccess: " + req.body.previewAccess
+                                        + "\r\nTheme: " + req.body.theme,
+                    'Subject': 'New user sign up!!!',
+                    'TopicArn': snsTopic
+                }, function(err, data) {
+                    if (err) {
+                        res.status(500).end();
+                        console.log('SNS Error: ' + err);
+                    } else {
+                        res.status(201).end();
+                    }
+                });
+            }
+        });
     });
 
     const port = process.env.PORT || 3000;
