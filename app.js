@@ -48,20 +48,21 @@ if (cluster.isMaster) {
 
     app.set('view engine', 'ejs');
     app.set('views', __dirname + '/views');
-    app.use(bodyParser.urlencoded({extended:false}));
+    // app.use(bodyParser.urlencoded({extended:false}));
 
     // Middleware
-    // app.use(bodyParser.json({limit: '50mb', extended: true}))
-    // app.use(bodyParser.urlencoded({limit: '50mb', extended: true})) // allow images
+    app.use(bodyParser.json({limit: '50mb', extended: true}))
+    app.use(bodyParser.urlencoded({limit: '50mb', extended: true})) // allow images
     app.use(cors());
 
-    app.use(session({
-      secret: 's3cret', // it can be anything we want
-      resave: true, // changed to true
-      saveUninitialized: true,
-      org: {}, // salesforce
-      token: null // salesforce
-    }));
+    // app.use(session({
+    //   secret: 's3cret', // it can be anything we want
+    //   resave: true, // changed to true
+    //   saveUninitialized: true,
+    //   org: {}, // salesforce
+    //   token: null // salesforce
+    // }));
+
 
     app.get('/', function(req, res) {
         res.render('index', {
