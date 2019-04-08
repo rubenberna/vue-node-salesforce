@@ -49,9 +49,6 @@ if (cluster.isMaster) {
     // Start express server
     const app = express();
 
-    // app.set('view engine', 'ejs');
-    // app.set('views', __dirname + '/views');
-
     //Middleware
     app.use(bodyParser.json({limit: '50mb', extended: true}))
     app.use(bodyParser.urlencoded({limit: '50mb', extended: true})) // allow images
@@ -83,55 +80,6 @@ if (cluster.isMaster) {
       require('dotenv').load();
     }
 
-    // app.get('/', function(req, res) {
-    //     res.render('index', {
-    //         static_path: 'static',
-    //         theme: process.env.THEME || 'flatly',
-    //         flask_debug: process.env.FLASK_DEBUG || 'false'
-    //     });
-    // });
-
-    // app.post('/signup', function(req, res) {
-    //     const item = {
-    //         'email': {'S': req.body.email},
-    //         'name': {'S': req.body.name},
-    //         'preview': {'S': req.body.previewAccess},
-    //         'theme': {'S': req.body.theme}
-    //     };
-    //
-    //     ddb.putItem({
-    //         'TableName': ddbTable,
-    //         'Item': item,
-    //         'Expected': { email: { Exists: false } }
-    //     }, function(err, data) {
-    //         if (err) {
-    //             const returnStatus = 500;
-    //
-    //             if (err.code === 'ConditionalCheckFailedException') {
-    //                 returnStatus = 409;
-    //             }
-    //
-    //             res.status(returnStatus).end();
-    //             console.log('DDB Error: ' + err);
-    //         } else {
-    //             sns.publish({
-    //                 'Message': 'Name: ' + req.body.name + "\r\nEmail: " + req.body.email
-    //                                     + "\r\nPreviewAccess: " + req.body.previewAccess
-    //                                     + "\r\nTheme: " + req.body.theme,
-    //                 'Subject': 'New user sign up!!!',
-    //                 'TopicArn': snsTopic
-    //             }, function(err, data) {
-    //                 if (err) {
-    //                     res.status(500).end();
-    //                     console.log('SNS Error: ' + err);
-    //                 } else {
-    //                     res.status(201).end();
-    //                 }
-    //             });
-    //         }
-    //     });
-    // });
-
     // Start server
     const port = process.env.PORT || 5000;
 
@@ -139,11 +87,4 @@ if (cluster.isMaster) {
       console.log(`Server started on port ${port}`);
       salesforce.login();
     });
-
-
-    // const port = process.env.PORT || 3000;
-    //
-    // const server = app.listen(port, function () {
-    //     console.log('Server running at http://127.0.0.1:' + port + '/');
-    // });
 }
