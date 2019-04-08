@@ -38,37 +38,37 @@ if (cluster.isMaster) {
     const ddb = new AWS.DynamoDB();
 
     // Load Routes
-    const contracts = require('./routes/contracts');
-    const query = require('./routes/query');
-    const update = require('./routes/update');
-    const emailservice = require('./routes/emailservice');
+    // const contracts = require('./routes/contracts');
+    // const query = require('./routes/query');
+    // const update = require('./routes/update');
+    // const emailservice = require('./routes/emailservice');
 
     const ddbTable =  process.env.STARTUP_SIGNUP_TABLE;
     const snsTopic =  process.env.NEW_SIGNUP_TOPIC;
     const app = express();
 
-    app.use(session({
-      secret: 's3cret', // it can be anything we want
-      resave: true, // changed to true
-      saveUninitialized: true,
-      org: {}, // salesforce
-      token: null // salesforce
-    }));
+    // app.use(session({
+    //   secret: 's3cret', // it can be anything we want
+    //   resave: true, // changed to true
+    //   saveUninitialized: true,
+    //   org: {}, // salesforce
+    //   token: null // salesforce
+    // }));
 
-    // Middleware
-    app.use(bodyParser.json({limit: '50mb', extended: true}))
-    app.use(bodyParser.urlencoded({limit: '50mb', extended: true})) // allow images
-    app.use(cors());
+    // // Middleware
+    // app.use(bodyParser.json({limit: '50mb', extended: true}))
+    // app.use(bodyParser.urlencoded({limit: '50mb', extended: true})) // allow images
+    // app.use(cors());
 
-    // Routes
-    app.use('/contracts', contracts);
-    app.use('/query', query);
-    app.use('/update', update);
-    app.use('/emailservice', emailservice);
+    // // Routes
+    // app.use('/contracts', contracts);
+    // app.use('/query', query);
+    // app.use('/update', update);
+    // app.use('/emailservice', emailservice);
 
     app.set('view engine', 'ejs');
     app.set('views', __dirname + '/views');
-    // app.use(bodyParser.urlencoded({extended:false}));
+    app.use(bodyParser.urlencoded({extended:false}));
 
     app.get('/', function(req, res) {
         res.render('index', {
