@@ -35,7 +35,7 @@ if (cluster.isMaster) {
     const session = require('express-session');
     // const salesforce = require('./config/salesforce');
     const dotenv = require('dotenv');
-    dotenv.config();
+    // dotenv.config();
 
     AWS.config.region = process.env.REGION
 
