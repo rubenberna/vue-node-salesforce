@@ -28,6 +28,7 @@ if (cluster.isMaster) {
 
 // Code to run if we're in a worker process
 } else {
+    //Packages
     const AWS = require('aws-sdk');
     const express = require('express');
     const bodyParser = require('body-parser');
@@ -37,13 +38,21 @@ if (cluster.isMaster) {
     const dotenv = require('dotenv');
     dotenv.config();
 
-    AWS.config.region = process.env.REGION
+    // Load Routes
+    const contracts = require('./routes/contracts');
+    const query = require('./routes/query');
+    const update = require('./routes/update');
+    const emailservice = require('./routes/emailservice');
 
+    //AWS stuff
+
+    AWS.config.region = process.env.REGION
     const sns = new AWS.SNS();
     const ddb = new AWS.DynamoDB();
-
     const ddbTable =  process.env.STARTUP_SIGNUP_TABLE;
     const snsTopic =  process.env.NEW_SIGNUP_TOPIC;
+
+    // Start express server
     const app = express();
 
     app.set('view engine', 'ejs');
@@ -54,6 +63,7 @@ if (cluster.isMaster) {
     app.use(bodyParser.urlencoded({limit: '50mb', extended: true})) // allow images
     app.use(cors());
 
+    // Set up session
     app.use(session({
       secret: 's3cret', // it can be anything we want
       resave: true, // changed to true
