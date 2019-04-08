@@ -1,10 +1,5 @@
 // Include the cluster module
 const cluster = require('cluster');
-// Load Routes
-// const contracts = require('./routes/contracts');
-// const query = require('./routes/query');
-// const update = require('./routes/update');
-// const emailservice = require('./routes/emailservice');
 
 // Code to run if we're in the master process
 if (cluster.isMaster) {
@@ -54,8 +49,8 @@ if (cluster.isMaster) {
     // Start express server
     const app = express();
 
-    app.set('view engine', 'ejs');
-    app.set('views', __dirname + '/views');
+    // app.set('view engine', 'ejs');
+    // app.set('views', __dirname + '/views');
 
     //Middleware
     app.use(bodyParser.json({limit: '50mb', extended: true}))
