@@ -32,10 +32,10 @@ if (cluster.isMaster) {
     const express = require('express');
     const bodyParser = require('body-parser');
     const cors = require('cors');
-    const session = require('express-session');
+    // const session = require('express-session');
     // const salesforce = require('./config/salesforce');
-    const dotenv = require('dotenv');
-    dotenv.config();
+    // const dotenv = require('dotenv');
+    // dotenv.config();
 
     AWS.config.region = process.env.REGION
 
