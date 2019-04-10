@@ -372,7 +372,7 @@
         const source = await pdfCreator.buildPdf(pageOne, pageTwo, pageThree, pageFour, pageFive, screen)
         const email = this.contactDB.newEmail ? this.contactDB.newEmail : this.contact.Email
         const payload = {
-          dom: source.toString(),
+          dom: 'this is a test',
           email,
           id: this.contact.External_Id__c
         }
