@@ -44,9 +44,11 @@ class ContractService {
   // Send email to Contact
   static sendEmail(payload) {
     return axios
-      .post(emailservice, {
+      .post('http://localhost:5000/emailservice', {
         payload
       })
+      .then(res => res)
+      .catch(err => err)
   }
 
   static findContract(id) {
