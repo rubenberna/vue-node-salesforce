@@ -15,11 +15,10 @@ router.post('/', async (req, res) => {
 // Add a Contact to the database
 router.post('/add', async (req, res) => {
   const contact = req.body
-  updateSF(contact.id);
+  updateSF(contact.id)
   await db.createContact(contact)
-  .then(contact => res.status(201)
-  )
-  .catch(err => res.status(404))
+  .then(contact => res.sendStatus(200))
+  .catch(err => res.sendStatus(500))
 })
 
 const updateSF = (id) => {
