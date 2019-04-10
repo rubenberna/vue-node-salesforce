@@ -19,7 +19,6 @@
         <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/kantoren">Kantoren</a></li>
         <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/jobs">Jobs</a></li>
         <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/esf-projecten">ESF</a></li>
-        <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/esf-projecten" style="color: yellow">AWS</a></li>
         <li class="navbar-menu-item webshop"><a href="https://easylifeshop.be/">Webshop</a></li>
       </ul>
     </div>
