@@ -294,7 +294,7 @@
       }
     },
     methods: {
-      ...mapActions(['createContract', 'sendEmail', 'storeSignature', 'addEmail']),
+      ...mapActions(['createContract', 'storeSignature', 'addEmail']),
       // Set IP address of the user
       setIPAddress() {
         $.getJSON("https://jsonip.com?callback=?", (data) => {
@@ -377,8 +377,7 @@
           id: this.contact.External_Id__c
         }
         this.flashSuccess('E-mail verstuurd')
-        // this.sendEmail(payload)
-        ContractService.sendEmail(payload)
+        ContractService.sendEmail('E-mail verstuurd')
         this.homeBtn = true
       }
     },
