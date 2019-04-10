@@ -17,9 +17,6 @@ const actions = {
     if (contact) {
       commit('setContact', contact)
       dispatch('getOffice', contact.RegioId__c)
-      if (contact.Signed_Contract__c) {
-        dispatch('findContract', contact.External_Id__c)
-      }
     }
     setTimeout(function() { dispatch('changeLoading', false, { root: true })}, 1500)
   },

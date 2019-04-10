@@ -7,9 +7,10 @@ const router = express.Router();
 // Get a Contact per External ID
 router.post('/', async (req, res) => {
   const id = Object.values(req.body)
+  console.log(id)
   await db.searchContract(id)
-    .then(contact => res.sendStatus(201).send(contact))
-    .catch(err => res.sendStatus(404).send(err))
+    .then(contact => res.status(201).send(contact))
+    .catch(err => res.status(404).send(err))
 })
 
 // Add a Contact to the database
