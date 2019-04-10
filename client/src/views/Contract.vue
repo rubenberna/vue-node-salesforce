@@ -2,8 +2,7 @@
   <div class="contract">
     <flash class="flash"/>
     <div v-if='!contact' class="no-contact container">
-      <i class="material-icons">no_sim</i>
-      <h4>Voer uw ID in op onze <router-link to="/">startpagina</router-link></h4>
+      <broken-page />
     </div>
     <div v-else
         class="container"
@@ -255,6 +254,7 @@
   import Flash from '@/components/flash/Flash'
   import pdfCreator from '@/components/_helpers/pdfCreator'
   import moment from 'moment'
+  import BrokenPage from '@/components/404/BrokenPage'
 
   export default {
     name: 'contract',
@@ -280,6 +280,7 @@
     },
     components: {
       Flash,
+      BrokenPage
     },
     computed: {
       ...mapGetters(['contact', 'signed', 'autograph', 'flashSticker']),

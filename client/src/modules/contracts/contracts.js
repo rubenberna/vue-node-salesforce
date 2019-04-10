@@ -31,9 +31,9 @@ const actions = {
     const response = await api.findContract(id)
     commit('setCurrContract', response)
   },
-  sendEmail({commit}, payload) {
-    const response = api.sendEmail('testing')
-    console.log(response);
+  sendEmail({ commit }, payload) {
+    const response = api.sendEmail(payload)
+    console.log(response)
   },
   // Add/update email to Salesforce
   addEmail({ rootState }, email) {
