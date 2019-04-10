@@ -25,7 +25,8 @@ const actions = {
   },
   async createContract({ commit }, finalContract) {
     commit("setSigned", true);
-    api.addContract(finalContract)
+    const response = await api.addContract(finalContract)
+    console.log(response)
   },
   async findContract({ commit }, id) {
     const response = await api.findContract(id)
