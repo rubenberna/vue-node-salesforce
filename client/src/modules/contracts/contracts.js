@@ -33,6 +33,7 @@ const actions = {
   },
   sendEmail({commit}, payload) {
     // api.sendEmail(payload);
+    console.log(payload)
   },
   // Add/update email to Salesforce
   addEmail({ rootState }, email) {
