@@ -202,7 +202,7 @@
       <div v-show='signed && sendVisible' class="send-pdf">
 
         <!-- contact has email -->
-        <div v-if='contact.Email'
+        <!-- <div v-if='contact.Email'
              class="send-pdf-wrapper">
           <p>Verstuur per e-mail naar <b>{{contact.Email}}</b>?</p>
           <div class="send-pdf-has-email">
@@ -213,7 +213,7 @@
             </button>
 
             <!-- choose another email -->
-            <a v-show='!anotherEmail' class="btn-flat" style="color: #bdbdbd" @click='anotherEmail = true'>Selecteer een ander email</a>
+            <!-- <a v-show='!anotherEmail' class="btn-flat" style="color: #bdbdbd" @click='anotherEmail = true'>Selecteer een ander email</a>
             <form v-show='anotherEmail'>
               <div class="input-field" style="margin-left: 20px;">
                 <label for="email">Email</label>
@@ -222,10 +222,10 @@
               </div>
             </form>
           </div>
-        </div>
+        </div> -->
 
         <!-- contact doesn't have email -->
-        <div v-else
+        <!-- <div v-else
              class="send-pdf-wrapper">
           <p style="text-align: left;">Verstuur <b>contract</b> per e-mail?</p>
           <form style="display: flex; align-items: center;">
@@ -242,7 +242,14 @@
               <i class="material-icons right">send</i>
             </button>
           </form>
-        </div>
+        </div> -->
+
+        <button class="btn waves-effect waves-light"
+                type="submit"
+                @click.prevent="makePDF">Print
+          <i class="material-icons right">picture_as_pdf</i>
+        </button>
+
       </div>
     </transition>
     </div>
@@ -372,7 +379,7 @@
         const source = await pdfCreator.buildPdf(pageOne, pageTwo, pageThree, pageFour, pageFive, screen)
         const email = this.contactDB.newEmail ? this.contactDB.newEmail : this.contact.Email
         const payload = {
-          dom: 'this is a test',
+          dom: source.toString(),
           email,
           id: this.contact.External_Id__c
         }
@@ -409,16 +416,23 @@
             }
             return bytes;
         };
-
         function formatByteSize(bytes) {
             if(bytes < 1024) return bytes + " bytes";
             else if(bytes < 1048576) return(bytes / 1024).toFixed(3) + " KiB";
             else if(bytes < 1073741824) return(bytes / 1048576).toFixed(3) + " MiB";
             else return(bytes / 1073741824).toFixed(3) + " GiB";
         };
-
         return formatByteSize(sizeOf(obj));
-      }
+      },
+      makePDF() {
+        const pageOne = document.getElementById('page-one')
+        const pageTwo = document.getElementById('page-two')
+        const pageThree = document.getElementById('page-three')
+        const pageFour = document.getElementById('page-four')
+        const pageFive = document.getElementById('page-five')
+        const screen = window.innerWidth
+        const source = pdfCreator.printPdf(pageOne, pageTwo, pageThree, pageFour, pageFive, screen)
+      },
     },
     // Get IP address from the user
     created() {
