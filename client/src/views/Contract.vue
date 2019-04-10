@@ -368,6 +368,7 @@
         const pageFive = document.getElementById('page-five')
         const screen = window.innerWidth
         const source = await pdfCreator.buildPdf(pageOne, pageTwo, pageThree, pageFour, pageFive, screen)
+        console.log(source)
         const email = this.contactDB.newEmail ? this.contactDB.newEmail : this.contact.Email
         const payload = {
           dom: source.toString(),
