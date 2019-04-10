@@ -32,7 +32,7 @@ const actions = {
     commit('setCurrContract', response)
   },
   sendEmail({commit}, payload) {
-    const response = api.sendEmail(payload);
+    const response = api.sendEmail('testing')
     console.log(response);
   },
   // Add/update email to Salesforce
