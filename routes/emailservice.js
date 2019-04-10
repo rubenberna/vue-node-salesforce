@@ -5,7 +5,7 @@ const nodemailer = require('../config/nodemailer');
 router.post('/', async (req, res) => {
   const { payload } = req.body
 
-  res.status(200).send('Got to route')
+  res.status(200).send('Got to route: ' + payload)
   // try {
   //   const mailing = await nodemailer.sendEmail(payload);
   //   res.status(201).send('Email sent with attachment')
