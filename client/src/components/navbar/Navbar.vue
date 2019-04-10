@@ -19,6 +19,7 @@
         <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/kantoren">Kantoren</a></li>
         <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/jobs">Jobs</a></li>
         <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/esf-projecten">ESF</a></li>
+        <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/esf-projecten">AWS</a></li>
         <li class="navbar-menu-item webshop"><a href="https://easylifeshop.be/">Webshop</a></li>
       </ul>
     </div>
@@ -116,7 +117,7 @@
           p {
             font-size: 14px !important;
           }
-            
+
           }
         @media #{$large-and-down}  {
           display: none;
@@ -201,7 +202,7 @@
   }
 
   .small-media-menu {
-    display: none;   
+    display: none;
 
     a.small-media-menu_item {
       color: #2c3e50 !important;
@@ -209,7 +210,7 @@
 
     @media #{$medium-and-down}  {
        display: block;
-       
+
       }
   }
  .el-dropdown-menu__item a {
