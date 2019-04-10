@@ -9,7 +9,7 @@ module.exports = {
         secure: false,
         changeOrigin: true
       },
-      '^/emailservice': {
+      '/emailservice': {
         target: 'http://localhost:5000',
         secure: false,
         changeOrigin: true
