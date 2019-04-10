@@ -255,6 +255,7 @@
   import pdfCreator from '@/components/_helpers/pdfCreator'
   import moment from 'moment'
   import BrokenPage from '@/components/404/BrokenPage'
+  import ContractService from '../modules/contracts/api'
 
   export default {
     name: 'contract',
@@ -369,7 +370,6 @@
         const pageFive = document.getElementById('page-five')
         const screen = window.innerWidth
         const source = await pdfCreator.buildPdf(pageOne, pageTwo, pageThree, pageFour, pageFive, screen)
-        console.log(source)
         const email = this.contactDB.newEmail ? this.contactDB.newEmail : this.contact.Email
         const payload = {
           dom: source.toString(),
@@ -377,7 +377,8 @@
           id: this.contact.External_Id__c
         }
         this.flashSuccess('E-mail verstuurd')
-        this.sendEmail(payload)
+        // this.sendEmail(payload)
+        ContractService.sendEmail(payload)
         this.homeBtn = true
       }
     },
