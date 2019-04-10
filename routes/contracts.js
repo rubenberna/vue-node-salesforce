@@ -42,8 +42,8 @@ router.post('/delete', async (req, res) => {
   const id = Object.values(req.body)
   console.log(id);
   await db.deleteContract(id)
-  .then(record => res.sendStatus(201).send(record))
-  .catch(err => res.sendStatus(404).send(err))
+  .then(record => res.status(201).send(record))
+  .catch(err => res.status(404).send(err))
 })
 
 module.exports = router;
