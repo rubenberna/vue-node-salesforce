@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Contract from './views/Contract.vue'
 import PrintContract from './views/PrintContract.vue'
+import Batch from './views/Batch.vue'
 
 Vue.use(Router)
 
@@ -27,6 +28,10 @@ export default new Router({
       component: PrintContract,
       props: true
     },
-
+    {
+      path: '/batch',
+      name: 'batch',
+      component: Batch,
+    },
   ]
 })

@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="contract">
     <div class="container">
-      <div v-if='!currContract' class="no-contact container">
+      <div v-if='!currContract.name' class="no-contact container">
         <broken-page />
       </div>
       <div v-else id="contract-layout" class="container" style="text-align:justify; color: black;">
@@ -20,9 +20,9 @@
             <p>EasyLife dienstencheques als commerciële benaming van volgende vennootschappen: Dienstenbedrijf EasyLife bvba, Sivac bvba, Dilito bvba, met als correspondentieadres Draaiboomstraat 6, 2160 Wommelgem, vertegenwoordigd door haar zaakvoerder Louis Ballegeer.</p>
             <p>Hierna genoemd het <b>dienstenbedrijf</b>,</p>
             <div style="line-height: 0.7">
-              <p>en {{currContract.name}}</p>
-              <p>{{currContract.street}}</p>
-              <p>{{currContract.postalcode}} {{currContract.city}}</p>
+              <p>en {{currContract.name.S}}</p>
+              <p>{{currContract.street.S}}</p>
+              <p>{{currContract.postalcode.N}} {{currContract.city.S}}</p>
             </div>
             <p style="padding-top: 8px;">hierna genoemd de <b>gebruiker</b> wordt overeengekomen hetgeen volgt:</p>
             <p><b>1 Inleiding</b></p>
@@ -102,7 +102,7 @@
         <div id="page-five">
           <p><b>14 Betwistingen</b></p>
           <p>Bij betwistingen voortvloeiend uit deze overeenkomst is de Rechtbank van Antwerpen bevoegd.</p>
-          <p>Deze overeenkomst werd getekend te {{currContract.office}}, op {{signedDate}}</p>
+          <p>Deze overeenkomst werd getekend te {{currContract.office.S}}, op {{signedDate}}</p>
           <p>De gebruiker verklaart hierbij dat:</p>
           <div class="checkbox">
             <ul>
@@ -117,10 +117,10 @@
               <!-- User information -->
               <div>
                 <p><b>GEBRUIKER</b></p>
-                <p style="font-family: 'Satisfy', cursive; font-size: 20px;">{{currContract.typedname}}</p>
+                <p style="font-family: 'Satisfy', cursive; font-size: 20px;">{{currContract.typedname.S}}</p>
                 <div style="margin-top: 30px;">
                   <div>
-                    <img :src="currContract.signature" style="width: 150px">
+                    <img :src="currContract.signature.S" style="width: 150px">
                   </div>
                 </div>
               </div>
@@ -141,11 +141,11 @@
               </div>
               <div>
                 <p style="margin: 0 0 9px 0; font-weight: 600;">{{signedDate}}</p>
-                <p style="margin: 0;">{{currContract.signedtime}}</p>
+                <p style="margin: 0;">{{currContract.signedtime.S}}</p>
               </div>
               <div>
-                <p style="margin: 0 0 9px 0; font-weight: 600;">Signed by - {{currContract.name}}</p>
-                <p style="margin: 0;">IP: {{currContract.ipaddress}}</p>
+                <p style="margin: 0 0 9px 0; font-weight: 600;">Signed by - {{currContract.name.S}}</p>
+                <p style="margin: 0;">IP: {{currContract.ipaddress.S}}</p>
               </div>
             </div>
           </div>
@@ -204,7 +204,7 @@
       ...mapGetters(['currContract', 'loading']),
       signedDate() {
         moment.locale('nl-be');
-        return moment(this.currContract.signedat).format("MMM Do YYYY")
+        return moment(this.currContract.signedat.S).format("MMM Do YYYY")
       }
     },
     methods: {

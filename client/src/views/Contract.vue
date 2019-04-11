@@ -331,19 +331,19 @@
           name: this.contact.Name,
           email: this.contact.Email,
           externalId: this.contact.External_Id__c,
-          regioId: "" || this.contact.RegioId__c,
-          office: this.contact.office.name,
+          regioId: this.contact.RegioId__c || 'not provided',
+          office: this.contact.office.name || 'EasyLife',
           signature: data,
           signedAt: new Date(),
-          ipAddress: this.contactDB.ipAddress,
-          contractVersion: 1,
+          ipAddress: this.contactDB.ipAddress || 'not provided',
+          contractVersion: '1',
           typedName: this.contactDB.typedName,
           signedTime: moment(Date.now()).format('h:mm:ss a'),
-          street: "" || this.contact.MailingAddress.street,
-          postalCode: "" || this.contact.MailingAddress.postalCode,
-          city: "" || this.contact.MailingAddress.city,
+          street: this.contact.MailingAddress.street || 'not provided',
+          postalCode: this.contact.MailingAddress.postalCode || 'not provided',
+          city: this.contact.MailingAddress.city || 'not provided',
           id: this.contact.Id
-          };
+          }
         this.createContract(finalContact)
       },
 

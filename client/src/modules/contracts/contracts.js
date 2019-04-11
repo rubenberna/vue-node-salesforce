@@ -30,6 +30,7 @@ const actions = {
   },
   async findContract({ commit }, id) {
     const response = await api.findContract(id)
+    console.log(response)
     commit('setCurrContract', response)
   },
   // Add/update email to Salesforce

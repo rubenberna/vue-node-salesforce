@@ -56,7 +56,7 @@ class ContractService {
       .post(contracts, {
         id
       })
-      .then(res => res.data)
+      .then(res => res.data.Item)
       .catch(err => err)
   }
 
@@ -67,6 +67,15 @@ class ContractService {
     })
     .then( res => res )
     .catch( err => err )
+  }
+
+  static sendAll(list) {
+    return axios
+    .post(`${contracts}all`, {
+      list
+    })
+    .then( res => console.log(res))
+    .catch( e => console.log(e) )
   }
 }
 

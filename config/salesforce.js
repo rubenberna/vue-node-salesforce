@@ -16,5 +16,20 @@ module.exports = {
         console.log(e);
       }
     })
+  },
+
+  updateSF: (id) => {
+    const org = session.org
+    org.sobject("Contact").update({
+      Id: id,
+      Signed_Contract_Date__c: Date.now(),
+      Signed_Contract__c: true
+    }, function (err, ret) {
+      try {
+        console.log( ret )
+      } catch (e) {
+        console.log( err );
+      }
+    })
   }
 }

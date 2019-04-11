@@ -46,7 +46,7 @@
               Zie contract
               <i class="fa fa-print"></i>
             </button>
-            <!-- <button class="btn waves-effect" type="submit" @click='deleteContract(contact.External_Id__c)'>Delete from DB</button> -->
+            <button class="btn waves-effect" type="submit" @click='deleteContract(contact.External_Id__c)'>Delete from DB</button>
             <p>Andere gebruiker ? Stel <strong class="reset" @click='clear'>hier</strong> je account opnieuw in.</p>
           </div>
         </div>
