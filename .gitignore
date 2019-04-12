@@ -3,6 +3,9 @@
 # Elastic Beanstalk CLI Files
 .elasticbeanstalk/*
 
+# Elastic Beanstalk config
+.ebextensions/*
+
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
