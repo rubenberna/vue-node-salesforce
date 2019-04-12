@@ -1,6 +1,11 @@
 const AWS = require('aws-sdk')
-AWS.config.update({ region: 'eu-west-1' })
 const sns = new AWS.SNS()
+
+AWS.config.update({
+    region: process.env.AWS_REGION,
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+});
 const ddb = new AWS.DynamoDB()
 
 module.exports = {
@@ -13,7 +18,9 @@ module.exports = {
     }
     return new Promise((resolve, reject) => {
       ddb.getItem(params, (err, data) => {
-        if(err) return reject(err)
+        if(err) {
+          console.log(err)
+          return reject(err) }
         return resolve(data)
       })
     })
