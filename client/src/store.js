@@ -18,7 +18,7 @@ export default new Vuex.Store({
   },
   //persist state for page reload
   plugins: [createPersistedState({
-    paths: []
+    paths: ['contact.all']
     })
   ],
 })

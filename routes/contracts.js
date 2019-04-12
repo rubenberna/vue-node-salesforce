@@ -1,49 +1,47 @@
 const express = require('express');
 const db = require('../config/postgres');
+const dynamo = require('../config/dynamodb');
 const session = require("express-session");
+const salesforce = require('../config/salesforce');
 
 const router = express.Router();
 
 // Get a Contact per External ID
 router.post('/', async (req, res) => {
-  const id = Object.values(req.body)
-  console.log(id)
-  await db.searchContract(id)
-    .then(contact => res.status(201).send(contact))
+  const id = Object.values(req.body).toString()
+  await dynamo.getContract(id)
+    .then(contact => res.status(200).send(contact))
     .catch(err => res.status(404).send(err))
 })
 
 // Add a Contact to the database
 router.post('/add', async (req, res) => {
   const contact = req.body
-  updateSF(contact.id)
-  await db.createContact(contact)
-  .then(contact => res.sendStatus(200))
-  .catch(err => res.sendStatus(500))
+  salesforce.updateSF(contact.id)
+  await dynamo.createContact(contact)
+    .then(data => res.sendStatus(200))
+    .catch(err => res.status(404).send(err))
 })
-
-const updateSF = (id) => {
-  const org = session.org
-  org.sobject("Contact").update({
-    Id: id,
-    Signed_Contract_Date__c: Date.now(),
-    Signed_Contract__c: true
-  }, function (err, ret) {
-    try {
-      console.log( ret )
-    } catch (e) {
-      console.log( err );
-    }
-  })
-}
 
 // Delete
 router.post('/delete', async (req, res) => {
-  const id = Object.values(req.body)
-  console.log(id);
-  await db.deleteContract(id)
-  .then(record => res.status(201).send(record))
-  .catch(err => res.status(404).send(err))
+  const id = Object.values(req.body).toString()
+  await dynamo.deleteItem(id)
+    .then(contact => res.status(200).send(contact))
+    .catch(err => res.status(404).send(err))
+})
+
+// get all records from Postgres
+router.get('/', async (req, res) => {
+  await db.getAll()
+    .then(data => res.status(200).send(data))
+    .catch(err => res.status(404).send(err))
+})
+
+// post batch
+router.post('/all', async (req, res) => {
+  const all = req.body.list
+  dynamo.sendAll(all)
 })
 
 module.exports = router;

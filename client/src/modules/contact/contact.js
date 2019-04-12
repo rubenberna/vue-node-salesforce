@@ -1,12 +1,15 @@
 import api from './api'
+import otherApi from '../contracts/api'
 import { searchOffice } from '@/components/_helpers/findOffice'
 
 const state = {
-  contact: null
+  contact: null,
+  all: null
 }
 
 const getters = {
-  contact: state => state.contact
+  contact: state => state.contact,
+  allDB: state => state.all
 }
 
 const actions = {
@@ -31,6 +34,10 @@ const actions = {
     const name = searchOffice(id)
     const office = name
     commit('setOffice', office)
+  },
+  async getAll({ commit }) {
+    const response = await otherApi.getContracts()
+    commit('setAll', response)
   }
 }
 
@@ -40,6 +47,9 @@ const mutations = {
   },
   setOffice: (state, office) => {
     state.contact.office = office
+  },
+  setAll: (state, list) => {
+    state.all = list
   }
 }
 
