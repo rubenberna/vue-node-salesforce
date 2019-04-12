@@ -25,24 +25,22 @@ router.post('/add', async (req, res) => {
 
 // Delete
 router.post('/delete', async (req, res) => {
-  // const id = Object.values(req.body).toString()
-  // await dynamo.deleteItem(id)
-  //   .then(contact => res.status(200).send(contact))
-  //   .catch(err => res.status(404).send(err))
-  const id = Object.values(req.body)
-  await db.deleteContract(id)
+  const id = Object.values(req.body).toString()
+  await dynamo.deleteItem(id)
     .then(contact => res.status(200).send(contact))
     .catch(err => res.status(404).send(err))
 })
 
+// get all records from Postgres
 router.get('/', async (req, res) => {
   await db.getAll()
     .then(data => res.status(200).send(data))
     .catch(err => res.status(404).send(err))
 })
 
+// post batch
 router.post('/all', async (req, res) => {
-  const all = req.body
+  const all = req.body.list
   dynamo.sendAll(all)
 })
 
