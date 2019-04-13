@@ -7,7 +7,7 @@
 .ebextensions/*
 
 # aws credentials
-.aws/options.config
+.aws/*
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
