@@ -5,6 +5,8 @@
 
 # Elastic Beanstalk config
 .ebextensions/*
+
+# aws credentials
 .aws/*
 
 # Elastic Beanstalk Files
