@@ -41,10 +41,6 @@ if (cluster.isMaster) {
 
     //AWS stuff
     AWS.config.region = process.env.REGION
-    const sns = new AWS.SNS();
-    const ddb = new AWS.DynamoDB();
-    const ddbTable =  process.env.STARTUP_SIGNUP_TABLE;
-    const snsTopic =  process.env.NEW_SIGNUP_TOPIC;
 
     // Start express server
     const app = express();
