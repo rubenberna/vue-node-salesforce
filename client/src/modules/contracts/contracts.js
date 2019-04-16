@@ -25,12 +25,10 @@ const actions = {
   },
   async createContract({ commit }, finalContract) {
     commit("setSigned", true);
-    const response = await api.addContract(finalContract)
-    console.log(response)
+    api.addContract(finalContract)
   },
   async findContract({ commit }, id) {
     const response = await api.findContract(id)
-    console.log(response)
     commit('setCurrContract', response)
   },
   // Add/update email to Salesforce

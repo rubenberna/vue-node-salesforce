@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="contract">
     <div class="container">
-      <div v-if='!currContract.name' class="no-contact container">
+      <div v-if='!currContract' class="no-contact container">
         <broken-page />
       </div>
       <div v-else id="contract-layout" class="container" style="text-align:justify; color: black;">
