@@ -4,7 +4,6 @@
 .elasticbeanstalk/*
 
 # Elastic Beanstalk config
-.ebextensions/*
 .ebextensions/vars.config
 
 # aws credentials

@@ -26,13 +26,13 @@ if (cluster.isMaster) {
     //Packages
     const AWS = require('aws-sdk');
     const express = require('express');
-    const favicon = require('serve-favicon');
+    // const favicon = require('serve-favicon');
     const bodyParser = require('body-parser');
     const cors = require('cors');
     const session = require('express-session');
     const salesforce = require('./config/salesforce');
     const dotenv = require('dotenv');
-    const path = require('path')
+    // const path = require('path')
     dotenv.config();
 
     // Load Routes
@@ -43,6 +43,10 @@ if (cluster.isMaster) {
 
     //AWS stuff
     AWS.config.region = process.env.REGION
+    const sns = new AWS.SNS();
+    const ddb = new AWS.DynamoDB();
+    const ddbTable = process.env.STARTUP_SIGNUP_TABLE;
+    const snsTopic = process.env.NEW_SIGNUP_TOPIC;
 
     // Start express server
     const app = express();
@@ -71,10 +75,9 @@ if (cluster.isMaster) {
     if(process.env.NODE_ENV === 'production') {
       // Static folder
       app.use(express.static(__dirname + '/server/public/' ))  
-      app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))    
+      // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))    
       // Handle SPA
-      // app.get('/favicon.ico', (req, res) => res.sendStatus(204));
-      app.get('/favicon.ico', (req, res) => res.sendFile(__dirname + '/server/public/index.html'))
+      app.get(/.*/, (req, res) => res.sendFile(__dirname + '/server/public/index.html'))
       // reads: any route at all, send the file index.html located in the public folder
       // Use .env variables
       require('dotenv').load();
