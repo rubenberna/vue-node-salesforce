@@ -47,7 +47,6 @@ if (cluster.isMaster) {
     const app = express();
 
     //Middleware
-    app.use(favicon(__dirname, 'public/favicon.ico'))
     app.use(bodyParser.json({limit: '50mb', extended: true}))
     app.use(bodyParser.urlencoded({limit: '50mb', extended: true})) // allow images
     app.use(cors());
@@ -71,6 +70,7 @@ if (cluster.isMaster) {
     if(process.env.NODE_ENV === 'production') {
       // Static folder
       app.use(express.static(__dirname + '/server/public/' ))
+      app.use(favicon(__dirname, 'public/favicon.ico'))
       
       // Handle SPA
       app.get(/.*/, (req, res) => res.sendFile(__dirname + '/server/public/index.html'))
