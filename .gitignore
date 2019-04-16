@@ -3,9 +3,6 @@
 # Elastic Beanstalk CLI Files
 .elasticbeanstalk/*
 
-# Elastic Beanstalk config
-.ebextensions/vars.config
-
 # aws credentials
 .aws/*
 
