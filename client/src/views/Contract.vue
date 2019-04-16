@@ -107,7 +107,7 @@
         <div id="page-five">
           <p><b>14 Betwistingen</b></p>
           <p>Bij betwistingen voortvloeiend uit deze overeenkomst is de Rechtbank van Antwerpen bevoegd.</p>
-          <p>Deze overeenkomst werd getekend te {{contact.office.name}}, op {{today}}</p>
+          <p>Deze overeenkomst werd getekend te {{contact.office}}, op {{today}}</p>
           <p>De gebruiker verklaart hierbij dat:</p>
           <div class="checkbox">
             <form action="#">
@@ -138,13 +138,13 @@
               <input type="text" placeholder="Type your name" style="max-width: 330px; font-family: 'Satisfy', cursive; font-size: 20px; " v-model="contactDB.typedName">
               <div style="margin-top: 30px;">
                 <div v-show='!autograph'
-                    style="margin-top: 70px;">
-                  <p style="font-style: italic; color: gray;">Gebruik uw <i class="material-icons">mouse</i> om uw overeenkomst te tekenen</p>
+                    style="margin-top: 52px;">
+                  <p style="font-style: italic; text-align: center;">Gebruik uw <i class="material-icons">mouse</i> om uw overeenkomst te tekenen</p>
                   <!-- Signature canvas -->
                   <VueSignaturePad
                   id="signature"
-                  width="528px"
-                  height="300px"
+                  width="507px"
+                  height="270px"
                   ref="signaturePad"
                   />
                 </div>
@@ -176,9 +176,9 @@
               </router-link>
 
               <!-- buttons to sign or undo -->
-              <div style="display: flex; margin-top: 20px;">
-                <a class="waves-effect waves-light btn red darken-3" style="margin-right: 10px;" v-show='!signed' @click="undo">Wis</a>
-                <a class="waves-effect waves-light btn " v-show="!signed" @click="validateContract">Bevestig</a>
+              <div class="confirm-buttons">
+                <a class="waves-effect btn-flat erase-btn" v-show='!signed' @click="undo">Wis</a>
+                <a class="waves-effect btn light-blue darken-4 confirm-btn" v-show="!signed" @click="validateContract">Bevestig</a>
               </div>
             </div>
           </div>
@@ -388,43 +388,7 @@
         ContractService.sendEmail(payload)
         this.homeBtn = true
       },
-      memorySizeOf(obj) {
-        var bytes = 0;
-
-        function sizeOf(obj) {
-            if(obj !== null && obj !== undefined) {
-                switch(typeof obj) {
-                case 'number':
-                    bytes += 8;
-                    break;
-                case 'string':
-                    bytes += obj.length * 2;
-                    break;
-                case 'boolean':
-                    bytes += 4;
-                    break;
-                case 'object':
-                    var objClass = Object.prototype.toString.call(obj).slice(8, -1);
-                    if(objClass === 'Object' || objClass === 'Array') {
-                        for(var key in obj) {
-                            if(!obj.hasOwnProperty(key)) continue;
-                            sizeOf(obj[key]);
-                        }
-                    } else bytes += obj.toString().length * 2;
-                    break;
-                }
-            }
-            return bytes;
-        };
-        function formatByteSize(bytes) {
-            if(bytes < 1024) return bytes + " bytes";
-            else if(bytes < 1048576) return(bytes / 1024).toFixed(3) + " KiB";
-            else if(bytes < 1073741824) return(bytes / 1048576).toFixed(3) + " MiB";
-            else return(bytes / 1073741824).toFixed(3) + " GiB";
-        };
-        return formatByteSize(sizeOf(obj));
-      },
-      makePDF() {
+        makePDF() {
         const pageOne = document.getElementById('page-one')
         const pageTwo = document.getElementById('page-two')
         const pageThree = document.getElementById('page-three')
@@ -436,7 +400,7 @@
     },
     // Get IP address from the user
     created() {
-      this.setIPAddress()
+      this.setIPAddress()      
     }
   }
 </script>
@@ -543,6 +507,25 @@
     align-items: center;
     width: 100px;
     justify-content: space-around;
+  }
+
+  .confirm-buttons {
+    display: flex; 
+    margin-top: 20px; 
+    justify-content: space-evenly;
+
+    .erase-btn {
+      border: 1px solid;
+      padding-right: 28px; 
+      padding-left: 28px;
+      &:hover {
+        background: #eceff1;
+      }
+    }
+
+    .confirm-btn:hover {
+        background: #0277bd !important;
+    }
   }
 
 </style>

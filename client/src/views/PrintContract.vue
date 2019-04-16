@@ -159,6 +159,7 @@
               v-show="!loading"
               :bg-color="bgColor"
               :actions="fabActions"
+              :position="position"
               @reset="reset"
               @makePDF="makePDF"
             ></fab>
@@ -179,20 +180,20 @@
     name: 'printContract',
     data() {
       return {
-        bgColor: '#848484',
-          // position: 'top-right',
-          fabActions: [
-            {
-                name: 'reset',
-                icon: 'home',
-                tooltip: 'Home'
-            },
-            {
-                name: 'makePDF',
-                icon: 'picture_as_pdf',
-                tooltip: 'Print PDF'
-            },
-          ]
+        bgColor: '#1a237e',
+        position: 'top-right',
+        fabActions: [
+          {
+              name: 'reset',
+              icon: 'home',
+              tooltip: 'Home'
+          },
+          {
+              name: 'makePDF',
+              icon: 'picture_as_pdf',
+              tooltip: 'Print PDF'
+          },
+        ]
       }
     },
     components: {
