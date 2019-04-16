@@ -1,7 +1,6 @@
 const express = require('express');
 const db = require('../config/postgres');
 const dynamo = require('../config/dynamodb');
-const session = require("express-session");
 const salesforce = require('../config/salesforce');
 
 const router = express.Router();
