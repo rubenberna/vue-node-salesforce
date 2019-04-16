@@ -32,6 +32,7 @@ if (cluster.isMaster) {
     const session = require('express-session');
     const salesforce = require('./config/salesforce');
     const dotenv = require('dotenv');
+    const path = require('path')
     dotenv.config();
 
     // Load Routes
@@ -47,6 +48,7 @@ if (cluster.isMaster) {
     const app = express();
 
     //Middleware
+    app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
     app.use(bodyParser.json({limit: '50mb', extended: true}))
     app.use(bodyParser.urlencoded({limit: '50mb', extended: true})) // allow images
     app.use(cors());
@@ -69,9 +71,7 @@ if (cluster.isMaster) {
     // Handle production
     if(process.env.NODE_ENV === 'production') {
       // Static folder
-      app.use(express.static(__dirname + '/server/public/' ))
-      app.use(favicon(__dirname + '/server/public/img/favicon.ico'))
-      
+      app.use(express.static(__dirname + '/server/public/' ))      
       // Handle SPA
       app.get(/.*/, (req, res) => res.sendFile(__dirname + '/server/public/index.html'))
       // reads: any route at all, send the file index.html located in the public folder
