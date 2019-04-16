@@ -26,10 +26,12 @@ if (cluster.isMaster) {
     //Packages
     const AWS = require('aws-sdk');
     const express = require('express');
+    const favicon = require('serve-favicon');
     const bodyParser = require('body-parser');
     const cors = require('cors');
     const session = require('express-session');
     const salesforce = require('./config/salesforce');
+    const path = require('path')
     const dotenv = require('dotenv');
     dotenv.config();
 
@@ -69,6 +71,7 @@ if (cluster.isMaster) {
     if(process.env.NODE_ENV === 'production') {
       // Static folder
       app.use(express.static(__dirname + '/server/public/' ))
+      app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
       // Handle SPA
       app.get(/.*/, (req, res) => res.sendFile(__dirname + '/server/public/index.html'))
       // reads: any route at all, send the file index.html located in the public folder
