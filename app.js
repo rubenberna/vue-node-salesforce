@@ -48,7 +48,6 @@ if (cluster.isMaster) {
     const app = express();
 
     //Middleware
-    app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
     app.use(bodyParser.json({limit: '50mb', extended: true}))
     app.use(bodyParser.urlencoded({limit: '50mb', extended: true})) // allow images
     app.use(cors());
@@ -71,9 +70,11 @@ if (cluster.isMaster) {
     // Handle production
     if(process.env.NODE_ENV === 'production') {
       // Static folder
-      app.use(express.static(__dirname + '/server/public/' ))      
+      app.use(express.static(__dirname + '/server/public/' ))  
+      app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))    
       // Handle SPA
       app.get(/.*/, (req, res) => res.sendFile(__dirname + '/server/public/index.html'))
+      app.get('/favicon.ico', (req, res) => res.sendStatus(204));
       // reads: any route at all, send the file index.html located in the public folder
       // Use .env variables
       require('dotenv').load();
