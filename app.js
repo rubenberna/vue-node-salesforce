@@ -31,7 +31,6 @@ if (cluster.isMaster) {
     const cors = require('cors');
     const session = require('express-session');
     const salesforce = require('./config/salesforce');
-    const path = require('path')
     const dotenv = require('dotenv');
     dotenv.config();
 
@@ -48,7 +47,7 @@ if (cluster.isMaster) {
     const app = express();
 
     //Middleware
-    app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+    app.use(favicon(__dirname, 'public/favicon.ico'))
     app.use(bodyParser.json({limit: '50mb', extended: true}))
     app.use(bodyParser.urlencoded({limit: '50mb', extended: true})) // allow images
     app.use(cors());
