@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
 
   await org.query(q, function(err, result) {
     if(!err && result.records[0]) res.status(201).send(result.records[0]);
-    else res.status(404).send('No user with that ID found')
+    else res.status(404).send('No user with that ID found', err)
   })
 })
 
