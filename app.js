@@ -70,7 +70,7 @@ if (cluster.isMaster) {
     if(process.env.NODE_ENV === 'production') {
       // Static folder
       app.use(express.static(__dirname + '/server/public/' ))
-      app.use(favicon(__dirname, 'public/favicon.ico'))
+      app.use(favicon(__dirname + 'public/favicon.ico'))
       
       // Handle SPA
       app.get(/.*/, (req, res) => res.sendFile(__dirname + '/server/public/index.html'))
