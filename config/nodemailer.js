@@ -1,11 +1,15 @@
 // Use at least Nodemailer v4.1.0
 const nodemailer = require('nodemailer');
+const pdfCreator = require('./pdfCreator')
 
 module.exports = {
   async sendEmail(payload) {
     const { email } = payload
     const { dom } = payload
     const { id } = payload
+
+    const pdf = await pdfCreator.buildPdf(dom)
+    
 
     const transporter = nodemailer.createTransport({
       host: "smtp.postmarkapp.com",

@@ -202,7 +202,7 @@
       <div v-show='signed && sendVisible' class="send-pdf">
 
         <!-- contact has email -->
-        <!-- <div v-if='contact.Email'
+        <div v-if='contact.Email'
              class="send-pdf-wrapper">
           <p>Verstuur per e-mail naar <b>{{contact.Email}}</b>?</p>
           <div class="send-pdf-has-email">
@@ -213,7 +213,7 @@
             </button>
 
             <!-- choose another email -->
-            <!-- <a v-show='!anotherEmail' class="btn-flat" style="color: #bdbdbd" @click='anotherEmail = true'>Selecteer een ander email</a>
+            <a v-show='!anotherEmail' class="btn-flat" style="color: #bdbdbd" @click='anotherEmail = true'>Selecteer een ander email</a>
             <form v-show='anotherEmail'>
               <div class="input-field" style="margin-left: 20px;">
                 <label for="email">Email</label>
@@ -222,10 +222,10 @@
               </div>
             </form>
           </div>
-        </div> -->
+        </div>
 
         <!-- contact doesn't have email -->
-        <!-- <div v-else
+        <div v-else
              class="send-pdf-wrapper">
           <p style="text-align: left;">Verstuur <b>contract</b> per e-mail?</p>
           <form style="display: flex; align-items: center;">
@@ -242,13 +242,13 @@
               <i class="material-icons right">send</i>
             </button>
           </form>
-        </div> -->
+        </div>
 
-        <button class="btn waves-effect waves-light"
+        <!-- <button class="btn waves-effect waves-light"
                 type="submit"
                 @click.prevent="makePDF">Print
           <i class="material-icons right">picture_as_pdf</i>
-        </button>
+        </button> -->
 
       </div>
     </transition>
@@ -263,6 +263,7 @@
   import moment from 'moment'
   import BrokenPage from '@/components/404/BrokenPage'
   import ContractService from '../modules/contracts/api'
+  import sizeof from 'object-sizeof'
 
   export default {
     name: 'contract',
@@ -369,22 +370,34 @@
       },
       // Send PDF as attachment via nodemailer
       async triggerEmail() {
-        this.sendVisible = false
+        this.sendVisible = false 
         const pageOne = document.getElementById('page-one')
         const pageTwo = document.getElementById('page-two')
         const pageThree = document.getElementById('page-three')
         const pageFour = document.getElementById('page-four')
         const pageFive = document.getElementById('page-five')
         const screen = window.innerWidth
-        const source = await pdfCreator.buildPdf(pageOne, pageTwo, pageThree, pageFour, pageFive, screen)
+        
+        const html = [pageOne, pageTwo, pageThree, pageFour, pageFive]
+        const source = await pdfCreator.justCanvas(html, screen)
+        console.log(sizeof(source))
+        
+
+        // const source = await pdfCreator.buildPdf(pageOne, pageTwo, pageThree, pageFour, pageFive, screen)
         const email = this.contactDB.newEmail ? this.contactDB.newEmail : this.contact.Email
         const payload = {
-          dom: source.toString(),
+          dom: source,
           email,
           id: this.contact.External_Id__c
         }
-        console.log(this.memorySizeOf(payload))
-        this.flashSuccess('E-mail verstuurd')
+        // const payload = {
+        //   dom: source.toString(),
+        //   email,
+        //   id: this.contact.External_Id__c
+        // }
+        // this.flashSuccess('E-mail verstuurd')
+        // const {dom} = payload
+                
         ContractService.sendEmail(payload)
         this.homeBtn = true
       },
