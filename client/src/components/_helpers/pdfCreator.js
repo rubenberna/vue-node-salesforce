@@ -124,43 +124,4 @@ export default {
     });
     return doc.output("datauristring");
   },
-  async justCanvas(html, screen) {
-    const margin = findMargin(screen)
-    const first = await html2canvas(html[0], {
-      scale: 0.9,
-      onclone: function (document) {
-        document.querySelector("#page-one").style.marginRight = margin;
-      }
-    })
-
-    const second = await html2canvas(html[1], {
-      scale: 0.9,
-      onclone: function (document) {
-        document.querySelector("#page-two").style.marginRight = margin;
-      }
-    })
-
-    const third = await html2canvas(html[2], {
-      scale: 0.9,
-      onclone: function (document) {
-        document.querySelector("#page-three").style.marginRight = margin;
-      }
-    })
-
-    const fourth = await html2canvas(html[3], {
-      scale: 0.9,
-      onclone: function (document) {
-        document.querySelector("#page-four").style.marginRight = margin;
-      }
-    })
-
-    const fifth = await html2canvas(html[4], {
-      scale: 0.9,
-      onclone: function (document) {
-        document.querySelector("#page-five").style.marginRight = margin;
-      }
-    })
-    let canvas = [first, second, third, fourth, fifth]
-    return canvas
-  }
 };

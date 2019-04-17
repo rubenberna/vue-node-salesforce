@@ -377,26 +377,15 @@
         const pageFour = document.getElementById('page-four')
         const pageFive = document.getElementById('page-five')
         const screen = window.innerWidth
-        
-        const html = [pageOne, pageTwo, pageThree, pageFour, pageFive]
-        const source = await pdfCreator.justCanvas(html, screen)
-        console.log(sizeof(source))
-        
 
-        // const source = await pdfCreator.buildPdf(pageOne, pageTwo, pageThree, pageFour, pageFive, screen)
+        const source = await pdfCreator.buildPdf(pageOne, pageTwo, pageThree, pageFour, pageFive, screen)
         const email = this.contactDB.newEmail ? this.contactDB.newEmail : this.contact.Email
         const payload = {
-          dom: source,
+          dom: source.toString(),
           email,
           id: this.contact.External_Id__c
         }
-        // const payload = {
-        //   dom: source.toString(),
-        //   email,
-        //   id: this.contact.External_Id__c
-        // }
-        // this.flashSuccess('E-mail verstuurd')
-        // const {dom} = payload
+        this.flashSuccess('E-mail verstuurd')
                 
         ContractService.sendEmail(payload)
         this.homeBtn = true
