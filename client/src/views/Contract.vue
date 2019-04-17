@@ -202,7 +202,7 @@
       <div v-show='signed && sendVisible' class="send-pdf">
 
         <!-- contact has email -->
-        <div v-if='contact.Email'
+        <!-- <div v-if='contact.Email'
              class="send-pdf-wrapper">
           <p>Verstuur per e-mail naar <b>{{contact.Email}}</b>?</p>
           <div class="send-pdf-has-email">
@@ -210,10 +210,10 @@
                     type="submit"
                     @click.prevent="verifyEmail">Stuur
               <i class="material-icons right">send</i>
-            </button>
+            </button> -->
 
             <!-- choose another email -->
-            <a v-show='!anotherEmail' class="btn-flat" style="color: #bdbdbd" @click='anotherEmail = true'>Selecteer een ander email</a>
+            <!-- <a v-show='!anotherEmail' class="btn-flat" style="color: #bdbdbd" @click='anotherEmail = true'>Selecteer een ander email</a>
             <form v-show='anotherEmail'>
               <div class="input-field" style="margin-left: 20px;">
                 <label for="email">Email</label>
@@ -222,10 +222,10 @@
               </div>
             </form>
           </div>
-        </div>
+        </div> -->
 
         <!-- contact doesn't have email -->
-        <div v-else
+        <!-- <div v-else
              class="send-pdf-wrapper">
           <p style="text-align: left;">Verstuur <b>contract</b> per e-mail?</p>
           <form style="display: flex; align-items: center;">
@@ -242,13 +242,13 @@
               <i class="material-icons right">send</i>
             </button>
           </form>
-        </div>
+        </div> -->
 
-        <!-- <button class="btn waves-effect waves-light"
+        <button class="btn waves-effect waves-light"
                 type="submit"
                 @click.prevent="makePDF">Print
           <i class="material-icons right">picture_as_pdf</i>
-        </button> -->
+        </button>
 
       </div>
     </transition>
