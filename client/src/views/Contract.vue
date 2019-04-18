@@ -246,7 +246,7 @@
 
         <button class="btn waves-effect waves-light"
                 type="submit"
-                @click.prevent="makePDF">Print
+                @click.prevent="makePDF">Bewaren
           <i class="material-icons right">picture_as_pdf</i>
         </button>
 
