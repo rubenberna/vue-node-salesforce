@@ -150,7 +150,7 @@
             </div>
           </div>
           </div>
-            <loader class='loader' color="#848484" :loading='loading'/>
+            <loader class='loader' color="#1a237e" :loading='loading'/>
             <!-- <a v-show="!loading" class="btn-floating pulse btn-large print-btn grey accent-3"
               @click.prevent='makePDF'>
                 <i class="material-icons">print</i>

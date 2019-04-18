@@ -61,7 +61,7 @@ export default {
       let img = canvas.toDataURL("image/png");
       doc.addPage();
       doc.addImage(img, "JPEG", 17, 50);
-      doc.save()
+      doc.save('EasyLife.pdf')
     });
   },
   async buildPdf(pageOne, pageTwo, pageThree, pageFour, pageFive, screen) {
