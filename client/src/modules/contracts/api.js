@@ -1,4 +1,5 @@
 import axios from 'axios'
+import fetch from 'isomorphic-fetch'
 
 const contracts = '/contracts/'
 const update = '/update/'
