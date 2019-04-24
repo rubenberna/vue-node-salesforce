@@ -404,7 +404,7 @@
         const screen = window.innerWidth
         const source = await pdfCreator.printPdf(pageOne, pageTwo, pageThree, pageFour, pageFive, screen)
         this.changeLoading(false)
-        this.$router.push('/')
+        setTimeout(() => this.$router.push('/'), 2000 ) 
       },
     },
     // Get IP address from the user
@@ -540,7 +540,7 @@
       width: 90px;
       position: absolute;
       left: 1vw;
-      bottom: 1vh;
+      bottom: 2vh;
     }
   }
 
