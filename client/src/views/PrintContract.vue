@@ -261,7 +261,7 @@
       width: 90px;
       position: fixed;
       right: 5vw;
-      bottom: 5vh;
+      top: 5vh;
     }
 
 </style>
