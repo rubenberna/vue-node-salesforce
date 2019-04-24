@@ -243,13 +243,15 @@
             </button>
           </form>
         </div> -->
-
-        <button class="btn waves-effect waves-light"
-                type="submit"
-                @click.prevent="makePDF">Bewaren
-          <i class="material-icons right">picture_as_pdf</i>
-        </button>
-
+        <div class="contract-print-action">
+          <loader class='loader' color="#26a69a" :loading='loading'/>
+          <button v-show="!loading"
+                  class="btn waves-effect waves-light print-btn"
+                  type="submit"
+                  @click.prevent="makePDF">Bewaren
+            <i class="material-icons right">picture_as_pdf</i>
+          </button>
+        </div>
       </div>
     </transition>
     </div>
@@ -264,6 +266,7 @@
   import BrokenPage from '@/components/404/BrokenPage'
   import ContractService from '../modules/contracts/api'
   import sizeof from 'object-sizeof'
+  import Loader from '@/components/loader/Loader'
 
   export default {
     name: 'contract',
@@ -289,10 +292,11 @@
     },
     components: {
       Flash,
-      BrokenPage
+      BrokenPage,
+      Loader
     },
     computed: {
-      ...mapGetters(['contact', 'signed', 'autograph', 'flashSticker']),
+      ...mapGetters(['contact', 'signed', 'autograph', 'flashSticker', 'loading']),
       today() {
         moment.locale('nl-be');
         return moment(new Date()).format("MMM Do YYYY")
@@ -302,7 +306,7 @@
       }
     },
     methods: {
-      ...mapActions(['createContract', 'storeSignature', 'addEmail']),
+      ...mapActions(['createContract', 'storeSignature', 'addEmail', 'changeLoading']),
       // Set IP address of the user
       setIPAddress() {
         $.getJSON("https://jsonip.com?callback=?", (data) => {
@@ -390,14 +394,17 @@
         ContractService.sendEmail(payload)
         this.homeBtn = true
       },
-        makePDF() {
+        async makePDF() {
+        this.changeLoading(true)
         const pageOne = document.getElementById('page-one')
         const pageTwo = document.getElementById('page-two')
         const pageThree = document.getElementById('page-three')
         const pageFour = document.getElementById('page-four')
         const pageFive = document.getElementById('page-five')
         const screen = window.innerWidth
-        const source = pdfCreator.printPdf(pageOne, pageTwo, pageThree, pageFour, pageFive, screen)
+        const source = await pdfCreator.printPdf(pageOne, pageTwo, pageThree, pageFour, pageFive, screen)
+        this.changeLoading(false)
+        this.$router.push('/')
       },
     },
     // Get IP address from the user
@@ -527,6 +534,13 @@
 
     .confirm-btn:hover {
         background: #0277bd !important;
+    }
+
+    .loader {
+      width: 90px;
+      position: absolute;
+      left: 1vw;
+      bottom: 1vh;
     }
   }
 
