@@ -3,9 +3,6 @@ const nodemailer = require('nodemailer');
 
 module.exports = {
   async sendEmail(email, id) {
-    // const { email } = payload
-    // const { dom } = payload
-    // const { id } = payload
 
     const transporter = nodemailer.createTransport({
       host: "smtp.postmarkapp.com",
