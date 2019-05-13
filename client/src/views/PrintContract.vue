@@ -176,7 +176,7 @@
     name: 'printContract',
     data() {
       return {
-        bgColor: '#1a237e',
+        bgColor: '#034471',
         position: 'top-right',
         fabActions: [
           {
