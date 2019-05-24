@@ -189,13 +189,13 @@
               icon: 'picture_as_pdf',
               tooltip: 'Print PDF'
           },
-        ]
+        ],
       }
     },
     components: {
       Loader,
       fab,
-      BrokenPage
+      BrokenPage,
     },
     computed: {
       ...mapGetters(['currContract', 'loading']),

@@ -52,10 +52,6 @@ export default {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-  //   -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
-  // background-size: cover;
     filter: brightness(55%);
     height: 68vh;
 

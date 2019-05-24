@@ -255,6 +255,9 @@
       </div>
     </transition>
     </div>
+      <Modal 
+        :dialogVisible='modalOpen' 
+        @toggleDialog='modalOpen = $event'/>
   </div>
 </template>
 
@@ -267,6 +270,7 @@
   import ContractService from '../modules/contracts/api'
   import sizeof from 'object-sizeof'
   import Loader from '@/components/loader/Loader'
+  import Modal from '@/components/modal/Modal'
 
   export default {
     name: 'contract',
@@ -287,13 +291,15 @@
           typedName: null,
           signedTime: null
         },
-        homeBtn: false
+        homeBtn: false,
+        modalOpen: false
       }
     },
     components: {
       Flash,
       BrokenPage,
-      Loader
+      Loader,
+      Modal
     },
     computed: {
       ...mapGetters(['contact', 'signed', 'autograph', 'flashSticker', 'loading']),
@@ -350,8 +356,8 @@
           id: this.contact.Id
           }
         this.createContract(finalContact)
+        this.modalOpen = true
       },
-
       async saveSignature(data) {
         this.storeSignature(data)
       },

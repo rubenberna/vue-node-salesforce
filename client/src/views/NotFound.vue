@@ -1,5 +1,5 @@
 <template>
-  <div class="404 container">
+  <div class="notFound container">
     <broken-page />
   </div>
 </template>
@@ -15,8 +15,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.404 {
-  min-height: 100vh;
-  margin-bottom: 50px;
-}
+  .notFound {
+    min-height: 100vh;
+    margin-bottom: 50px;
+  }
 </style>
