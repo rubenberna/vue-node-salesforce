@@ -1,5 +1,6 @@
 <template>
-  <div class="navbar">
+  <div class="header">
+    <div class="navbar">
     <div class="navbar-wrapper">
       <div class="navbar-wrapper-logo">
         <a href="https://easylife-dc.be/nl">
@@ -40,13 +41,19 @@
       </el-dropdown>
     </div>
   </div>
+    <LanguageSelect class="language-btn"/>
+  </div> 
 </template>
 
 <script>
   import { mapGetters, mapActions } from 'vuex'
+  import LanguageSelect from '@/components/buttons/Language'
 
   export default {
     name: 'navbar',
+    components: {
+      LanguageSelect
+    },
     computed: mapGetters(['contact']),
     methods: {
       ...mapActions(['clear']),
@@ -56,6 +63,11 @@
 
 <style lang="scss" scoped>
   @import '../../assets/style.scss';
+
+  .header {
+    display: flex;
+    align-items: center;
+  }
 
   .navbar {
     height: 136px;
@@ -215,5 +227,11 @@
  .el-dropdown-menu__item a {
     color: #2c3e50 !important;
  }
+
+  .language-btn {
+    position: absolute;
+    right: 10vw;
+    top: 8vh;
+  }
 
 </style>
