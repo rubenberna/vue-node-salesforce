@@ -44,7 +44,6 @@ const actions = {
   },
   changeLocale({ commit }, language) {    
     commit('setLocale', language)
-    console.log(window.clientInformation.languages)
   }
 }
 
