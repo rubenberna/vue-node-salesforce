@@ -6,7 +6,7 @@
       width="30%">
       <div class="modal-question-box">
         <p class="modal-question">Ja - Fantastisch! <i class="material-icons">check</i></p>
-        <p class="modal-question">Neen - Neem dan snel eens een kijkje op onze webshop</p>
+        <p class="modal-question">Neen - Neem dan snel eens een kijkje op onze webshop !</p>
       </div>
         <a 
           class="waves-effect waves-light btn link-btn"
@@ -50,8 +50,8 @@
       }
     }
 
+  }
     .link-btn {
       margin-top: 20px;
     }
-  }
 </style>
