@@ -232,6 +232,7 @@
     position: absolute;
     right: 10vw;
     top: 8vh;
+    display: none;
   }
 
 </style>
