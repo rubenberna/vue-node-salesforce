@@ -14,7 +14,7 @@
           target="_blank" 
           rel="noopener noreferrer"
           @click="closeModal"
-          >Poets Expert</a>
+          >EasyLifeshop</a>
     </el-dialog>
   </div>
 </template>
