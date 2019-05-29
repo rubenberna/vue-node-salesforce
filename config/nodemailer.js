@@ -18,13 +18,7 @@ module.exports = {
       from: '"EasyLife" <Customercare@easylifedc.be>', // sender address
       to: email, // list of receivers
       subject: "Easy Life - Een kopie van uw contract", // Subject line
-      html: `<p>Beste klant,</p> <p>Wij hebben uw getekende overeenkomst goed ontvangen.</p> <p>Waarvoor onze welgemeende dank!</p><p>Uw getekende overeenkomst blijft steeds beschikbaar voor inzage op https://sign.easylifedc.be. Wanneer u opnieuw uw code <b>${id}</b> ingeeft en op de button ‘zie contract’ klikt, opent zich uw overeenkomst.</p><p>Voor verdere vragen of inlichtingen kan u steeds terecht bij onze Klantendienst: 0800 62 080 of customercare@easylifedc.be.</p> <p>Met vriendelijke groeten, </p> <p>Customer Care Department</p><p>Easy Life</p><p>Prins Boudewijnlaan 133</p><p>03/369 89 03</p>`, // html body
-
-      // attachments: [
-      //   {
-      //     path: dom
-      //   }
-      // ]
+      html: `<p>Beste klant,</p> <p>Wij hebben uw getekende overeenkomst goed ontvangen.</p> <p>Waarvoor onze welgemeende dank!</p><p>Uw getekende overeenkomst blijft steeds beschikbaar voor inzage op https://sign.easylifedc.be. Wanneer u opnieuw uw code <b>${id}</b> ingeeft en op de button ‘zie contract’ klikt, opent zich uw overeenkomst.</p><p>Voor verdere vragen of inlichtingen kan u steeds terecht bij onze Klantendienst: 0800 62 080 of customercare@easylifedc.be.</p> <p>Met vriendelijke groeten, </p> <p>Customer Care Department</p><p>Easy Life</p><p>Draaiboomstraat 6, 2160 Wommelgem</p><p>03/369 89 03</p>`, // html body
     };
 
     transporter.sendMail(message, (err, info) => {

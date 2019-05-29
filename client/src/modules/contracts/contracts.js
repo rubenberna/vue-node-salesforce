@@ -1,9 +1,9 @@
+import moment from 'moment'
 import api from './api'
 
 const state = {
   contracts: null,
   signed: false,
-  autograph: null,
   currContract: null,
   deletedContract: null
 }
@@ -11,7 +11,6 @@ const state = {
 const getters = {
   contracts: state => state.contracts,
   signed: state => state.signed,
-  autograph: state => state.autograph,
   currContract: state => state.currContract
 }
 
@@ -20,24 +19,32 @@ const actions = {
     const response = await api.getContracts();
     commit('setContracts', response)
   },
-  storeSignature({commit}, signature) {
-    commit('setAutograph', signature)
-  },
-  async createContract({ commit }, finalContract) {
-    commit("setSigned", true);
+  async createContract({ commit, rootState }) {
+    const { contact } = rootState.contact
+    const { contractForm } = rootState.contractForm
+    
+    const finalContract = {
+      name: contact.Name,
+      email: contact.Email,
+      externalId: contact.External_Id__c,
+      regioId: contact.RegioId__c || 'not provided',
+      office: contact.office.name || 'EasyLife',
+      signature: contractForm.signature,
+      signedAt: new Date(),
+      ipAddress: contractForm.ipAddress || 'not provided',
+      contractVersion: '1',
+      typedName: contractForm.typedName,
+      signedTime: moment(Date.now()).format('h:mm:ss a'),
+      street: contact.MailingAddress.street || 'not provided',
+      postalCode: contact.MailingAddress.postalCode || 'not provided',
+      city: contact.MailingAddress.city || 'not provided',
+      id: contact.Id
+    }
     api.addContract(finalContract)
   },
   async findContract({ commit }, id) {
     const response = await api.findContract(id)
     commit('setCurrContract', response)
-  },
-  // Add/update email to Salesforce
-  addEmail({ rootState }, email) {
-    const contact = {
-      id: rootState.contact.contact.Id,
-      email: email
-    }
-    api.addEmail(contact)
   },
   async deleteContract({commit}, id) {
     const response = await api.delete(id)
@@ -51,9 +58,6 @@ const mutations = {
   },
   setSigned: (state, boolean) => {
     state.signed = boolean
-  },
-  setAutograph: (state, data) => {
-    state.autograph = data
   },
   setCurrContract: (state, contract) => {
     state.currContract = contract

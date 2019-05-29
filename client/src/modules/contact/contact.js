@@ -28,8 +28,6 @@ const actions = {
   },
   clear({commit, dispatch}) {
     commit('setContact', null)
-    commit('setSigned', false, {root: true})
-    commit('setAutograph', null, {root: true})
     commit('setCurrContract', null, {root: true})
     dispatch('createFlash', {msg: 'Gebruikersgegevens gewist', type: 'warning'}, {root: true})
   },

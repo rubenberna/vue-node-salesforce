@@ -37,7 +37,6 @@ if (cluster.isMaster) {
     const contracts = require('./routes/contracts');
     const query = require('./routes/query');
     const update = require('./routes/update');
-    const emailservice = require('./routes/emailservice');
 
     //AWS stuff
     AWS.config.region = process.env.REGION
@@ -63,7 +62,6 @@ if (cluster.isMaster) {
     app.use('/contracts', contracts);
     app.use('/query', query);
     app.use('/update', update);
-    app.use('/emailservice', emailservice);
 
     // Handle production
     if(process.env.NODE_ENV === 'production') {
