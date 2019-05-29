@@ -81,10 +81,10 @@
        justify-content: space-between;
        margin-bottom: 30px;
        margin-top: 10px;
+       width: 100vw !important;
       }
 
      @media #{$small-and-down}  {
-       max-width: 100vw !important;
        height: 100%;
     }
 
@@ -128,7 +128,6 @@
           p {
             font-size: 14px !important;
           }
-
           }
         @media #{$large-and-down}  {
           display: none;
@@ -195,16 +194,13 @@
         &:hover {
           color: #5F97DD;
         }
-
         @media #{$x-large-and-down}  {
             font-size: 16px;
           }
-
          @media #{$large-and-down}  {
             font-size: 15px;
           }
       }
-
       a {
         text-decoration: none;
         color: inherit;
@@ -214,11 +210,9 @@
 
   .small-media-menu {
     display: none;
-
     a.small-media-menu_item {
       color: #2c3e50 !important;
     }
-
     @media #{$medium-and-down}  {
        display: block;
 
@@ -227,7 +221,6 @@
  .el-dropdown-menu__item a {
     color: #2c3e50 !important;
  }
-
   .language-btn {
     position: absolute;
     right: 10vw;

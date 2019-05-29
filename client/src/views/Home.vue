@@ -56,8 +56,7 @@ export default {
     height: 68vh;
 
     @media #{$small-and-down}  {
-      background-image: url('../assets/images/pattern.jpg');
-      // background-size: contain !important;
+      background-image: url('../assets/images/small_background.svg');
     }
   }
 

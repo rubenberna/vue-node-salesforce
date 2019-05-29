@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img :src="autograph" style="width: 200px">
+    <img :src="savedSignature">
   </div>
 </template>
 
@@ -9,7 +9,17 @@
   export default {
     name: 'user-signature',
     computed: {
-      ...mapGetters(['autograph'])
+      ...mapGetters(['contractForm', 'currContract']),
+      savedSignature() {
+        if(this.currContract) return this.currContract.signature.S
+        else return this.contractForm.signature
+      }
     },
   }
 </script>
+
+<style lang="scss" scoped>
+  img {
+    width: 300px;
+  }
+</style>

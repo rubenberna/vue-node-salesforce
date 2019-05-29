@@ -1,9 +1,9 @@
 <template>
   <div id="page-three">
     <ul>
-      <li><i class="fa fa-check" style="margin-right: 9px;"></i>de gebruiker steeds zorgen voor veilige elektrische leidingen en bij werken in de buurt van deze leidingen er zorg voor dragen dat de elektriciteit uitgeschakeld is;</li>
-      <li><i class="fa fa-check" style="margin-right: 9px;"></i>de gebruiker zorgt ervoor dat de toestellen (strijkijzer, fornuis, stofzuiger, trapladder, etc.) en de producten die hij ter beschikking stelt aan de uitvoerder geen aanleiding kunnen geven tot ongevallen of gezondheidsproblemen;</li>
-      <li><i class="fa fa-check" style="margin-right: 9px;"></i>de gebruiker zorgt ervoor dat de uitvoerder niet in contact hoeft te komen met huisdieren indien deze laatste dit niet wenst of gevaarlijk acht;</li>
+      <li><i class="fa fa-check"></i>de gebruiker steeds zorgen voor veilige elektrische leidingen en bij werken in de buurt van deze leidingen er zorg voor dragen dat de elektriciteit uitgeschakeld is;</li>
+      <li><i class="fa fa-check"></i>de gebruiker zorgt ervoor dat de toestellen (strijkijzer, fornuis, stofzuiger, trapladder, etc.) en de producten die hij ter beschikking stelt aan de uitvoerder geen aanleiding kunnen geven tot ongevallen of gezondheidsproblemen;</li>
+      <li><i class="fa fa-check"></i>de gebruiker zorgt ervoor dat de uitvoerder niet in contact hoeft te komen met huisdieren indien deze laatste dit niet wenst of gevaarlijk acht;</li>
     </ul>
     <p><b>6 Verlof of afwezigheid van de gebruiker</b></p>
     <p>Onverwachte bijsturing aan het werkschema en vakantieperiodes moeten minstens 14 dagen op voorhand aan het dienstenbedrijf gemeld worden. Indien de uitvoerder de voorziene taken niet kan uitvoeren ingevolge nalatigheid van de gebruiker, verbindt de gebruiker zich ertoe om per gepland werkuur een bedrag van 23,02 euro te betalen aan het dienstenbedrijf. De gebruiker heeft het recht om 6 poetsbeurten per jaar de dienstverlening te annuleren. De daaropvolgende weken kunnen ook in rekening gebracht aan het geplande uren maal 23,02 euro.</p>
@@ -24,6 +24,12 @@
 
 <script>
 export default {
-  
+  name: 'page-three'
 }
 </script>
+
+<style lang="scss" scoped>
+  i {
+    margin-right: 9px;
+  }
+</style>

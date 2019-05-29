@@ -1,6 +1,11 @@
 <template>
-  <div class="clear">
-      <a class="btn-floating btn-large waves-effect waves-light red clear" @click='clear'><i class="material-icons">autorenew</i></a>
+  <div>
+    <p>Andere gebruiker ? 
+      <span class="strong"
+            @click='clear'>hier
+      </span>
+      je account opnieuw in.
+    </p>
   </div>
 </template>
 
@@ -14,9 +19,8 @@
 </script>
 
 <style lang="scss" scoped>
-  .clear {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  .strong {
+    font-weight: 700;
+    cursor: pointer;
   }
 </style>
