@@ -79,9 +79,5 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
-    @media #{$small-and-down}  {
-      margin: 0 auto;
-    }
   }
 </style>

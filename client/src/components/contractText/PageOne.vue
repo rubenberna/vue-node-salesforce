@@ -20,7 +20,7 @@
       </div>
       <p style="padding-top: 8px;">hierna genoemd de <b>gebruiker</b> wordt overeengekomen hetgeen volgt:</p>
       <p><b>1 Inleiding</b></p>
-      <p>Tussen dienstenbedrijf, gebruiker en uitvoerder wordt overeengekomen dat de uitvoerder die tewerkgesteld is bij het dienstenbedrijf een aantal taken van huishoudelijke hulp uitvoert voor de gebruiker, kaderend in het overheidsprogramma 'dienstencheques'. De gebruiker en de uitvoerder verklaren uitdrukkelijk geen bloed- of aanverwanten te zijn tot de tweede graad, en niet hetzelfde woonplaats te delen.</p>
+      <p>Tussen dienstenbedrijf, gebruiker en uitvoerder wordt overeengekomen dat de uitvoerder die tewerkgesteld is bij het dienstenbedrijf een aantal taken van huishoudelijke hulp uitvoert voor de gebruiker, kaderend in het overheidsprogramma 'dienstencheques'. De gebruiker en de uitvoerder verklaren uitdrukkelijk geen bloed- of aanverwanten te zijn tot de tweede graad, en niet hetzelfde woonadres te delen.</p>
       <p><b>2 Opdracht</b></p>
       <p>De gebruiker geeft hierbij de opdracht aan het dienstenbedrijf voor het uitvoeren van volgende prestaties in de privéwoning van de opdrachtgever:</p>
       <ul>

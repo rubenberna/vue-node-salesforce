@@ -19,7 +19,7 @@ const actions = {
     const response = await api.getContracts();
     commit('setContracts', response)
   },
-  async createContract({ commit, rootState }) {
+  async createContract({ rootState }) {
     const { contact } = rootState.contact
     const { contractForm } = rootState.contractForm
     

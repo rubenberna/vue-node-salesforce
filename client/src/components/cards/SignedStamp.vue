@@ -72,7 +72,7 @@ export default {
       flex-direction: column;
       width: 50%;
       flex-direction: column;
-      min-width: 300px !important;
+      min-width: 280px !important;
       margin: 0 auto;
       margin-bottom: 35px;
     }

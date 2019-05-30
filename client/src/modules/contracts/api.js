@@ -1,9 +1,9 @@
 import axios from 'axios'
 import fetch from 'isomorphic-fetch'
 
+import store from '../../store'
+
 const contracts = '/contracts/'
-const update = '/update/'
-const emailservice = '/emailservice/'
 
 class ContractService {
   // Get all contracts
@@ -33,32 +33,19 @@ class ContractService {
     .catch( err => err )
   }
 
-  static addEmail(contact) {
-    return axios
-      .post(`${update}email`, {
-        contact
-      })
-      .then(res => res)
-      .catch(err => err);
-  }
-
-  // Send email to Contact
-  static sendEmail(payload) {
-    return axios
-      .post(emailservice, {
-        payload
-      })
-      .then(res => res)
-      .catch(err => err)
-  }
-
   static findContract(id) {
     return axios
       .post(contracts, {
         id
       })
-      .then(res => res.data.Item)
-      .catch(err => err)
+      .then(res => {
+        store.dispatch('createFlash', { msg: 'Succesvol ingelogd', type: 'success' })
+        return res.data.Item
+      })
+      .catch(err => {
+        store.dispatch('createFlash', { msg: 'Er werd geen gebruiker gevonden met deze ID', type: 'error' })
+        return err
+      })
   }
 
   static delete(id) {

@@ -12,7 +12,7 @@ class QueryService {
       return res.data })
     .catch(err => {
       store.dispatch('createFlash', {msg: 'Er werd geen gebruiker gevonden met deze ID', type: 'error'})
-      console.log(err);
+      return err
     })
   }
 }
