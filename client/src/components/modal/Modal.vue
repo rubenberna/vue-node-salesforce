@@ -9,7 +9,7 @@
         <p class="modal-question">Neen - Neem dan snel eens een kijkje op onze webshop !</p>
       </div>
         <a 
-          class="waves-effect waves-light btn link-btn"
+          class="waves-effect waves-light btn modal-link-btn"
           href="https://easylife.poets.expert/" 
           target="_blank" 
           rel="noopener noreferrer"
@@ -36,7 +36,9 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import '../../assets/style.scss';
+
   .modal-question-box {
     display: flex;
     flex-direction: column;
@@ -51,7 +53,21 @@
     }
 
   }
-    .link-btn {
-      margin-top: 20px;
+
+  .modal-link-btn {
+    margin-top: 20px;
+  }
+
+  .el-dialog {
+   @media #{$large-and-down}  {
+      width: 50% !important;
     }
+   @media #{$medium-and-down}  {
+      width: 55% !important;
+    }
+   @media #{$small-and-down}  {
+      width: 85% !important;
+    }
+  }
+
 </style>
