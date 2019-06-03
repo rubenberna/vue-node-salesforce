@@ -4,7 +4,7 @@
     <div class="search-board-content">
       <Search-board-text/>
       <div class="search-board-cta">
-        <h3 v-show="!contact">Geef hier uw code in:</h3>
+        <h3 v-show="!contact">{{ $t('welcomeMsg') }}</h3>
         <div v-if='loading' class="loader">
           <loader/>
         </div>

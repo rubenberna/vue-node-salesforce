@@ -70,16 +70,17 @@ export default {
     align-items: flex-end;
     justify-content: space-around;
     bottom: -70px;
-    width: 69%;
+    width: 92%;
     margin: 0 auto;
     opacity: 0.9;
-    margin-bottom: 100px;
+    margin-bottom: 110px;
 
     @media #{$medium-and-down}  {
        flex-direction: column;
        margin-top: -40px;
     }
     .icon {
+      width: 22%;
 
       h2 {
         font-size: 1.2em;

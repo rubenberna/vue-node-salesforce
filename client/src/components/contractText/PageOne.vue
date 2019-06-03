@@ -6,7 +6,7 @@
         <p class="page-one-wrapper-subtitle">Tussen gebruiker en dienstenbedrijf</p>
       </div>
       <div>
-        <img src="../../assets/images/logo.png" class="page-one-wrapper-logo">
+        <img src="../../assets/images/logo.svg" class="page-one-wrapper-logo">
       </div>
     </div>
       <hr>

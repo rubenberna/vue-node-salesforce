@@ -1,6 +1,7 @@
 import api from './api'
 import otherApi from '../contracts/api'
 import { searchOffice } from '@/components/_helpers/findOffice'
+import i18n from '@/plugins/i18n';
 
 const state = {
   contact: null,
@@ -40,8 +41,9 @@ const actions = {
     const response = await otherApi.getContracts()
     commit('setAll', response)
   },
-  changeLocale({ commit }, language) {    
-    commit('setLocale', language)
+  changeLocale({ commit }, language) {
+    commit('setLocale', language.toLowerCase())
+    i18n.locale = language.toLowerCase()
   }
 }
 

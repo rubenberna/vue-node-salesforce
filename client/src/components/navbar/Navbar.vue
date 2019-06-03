@@ -1,47 +1,47 @@
 <template>
   <div class="header">
     <div class="navbar">
-    <div class="navbar-wrapper">
-      <div class="navbar-wrapper-logo">
-        <a href="https://easylife-dc.be/nl">
-          <img src="../../assets/images/logo.png" class="logo-image" alt="">
-        </a>
+      <div class="navbar-wrapper">
+        <div class="navbar-wrapper-logo">
+          <a href="https://easylife-dc.be/nl">
+            <img src="../../assets/images/logo.svg" class="logo-image" alt="">
+          </a>
+        </div>
+        <div class="navbar-wrapper-slogan">
+          <p style="font-weight:300; font-size: 16px">Het geheim van meer dan <strong>17.500</strong> gezinnen in Vlaanderen en Brussel</p>
+        </div>
       </div>
-      <div class="navbar-wrapper-slogan">
-        <p style="font-weight:300; font-size: 16px">Het geheim van meer dan <strong>17.500</strong> gezinnen in Vlaanderen en Brussel</p>
+      <div class="navbar-menu">
+        <ul class="navbar-menu-list">
+          <li class="navbar-menu-item home"><a href="https://easylife-dc.be/nl">Home</a></li>
+          <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/huishoudhulp">Huishoudhulp</a></li>
+          <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/strijkatelier">Strijkatelier</a></li>
+          <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/dienstencheques/bestellen">Dienstencheques</a></li>
+          <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/kantoren">Kantoren</a></li>
+          <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/jobs">Jobs</a></li>
+          <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/esf-projecten">ESF</a></li>
+          <li class="navbar-menu-item webshop"><a href="https://easylifeshop.be/">Webshop</a></li>
+        </ul>
       </div>
+      <div class="small-media-menu">
+        <el-dropdown>
+            <el-button class="button Large">
+              <i class="material-icons">apps</i>
+            </el-button>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item><li class="navbar-menu-item home"><a href="https://easylife-dc.be/nl">Home</a></li></el-dropdown-item>
+              <el-dropdown-item><li class="navbar-menu-item"><a class="small-media-menu_item" href="https://easylife-dc.be/nl/huishoudhulp">Huishoudhulp</a></li></el-dropdown-item>
+              <el-dropdown-item><li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/strijkatelier">Strijkatelier</a></li></el-dropdown-item>
+              <el-dropdown-item><li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/dienstencheques/bestellen">Dienstencheques</a></li></el-dropdown-item>
+              <el-dropdown-item><li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/kantoren">Kantoren</a></li></el-dropdown-item>
+              <el-dropdown-item><li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/jobs">Jobs</a></li></el-dropdown-item>
+              <el-dropdown-item><li class="navbar-menu-item"><a class="small-media-menu_item" href="https://easylife-dc.be/nl/esf-projecten">ESF</a></li></el-dropdown-item>
+              <el-dropdown-item><li class="navbar-menu-item webshop"><a href="https://easylifeshop.be/">Webshop</a></li></el-dropdown-item>
+            </el-dropdown-menu>
+        </el-dropdown>
+      </div>
+      <LanguageSelect class="language-btn"/>
     </div>
-    <div class="navbar-menu">
-      <ul class="navbar-menu-list">
-        <li class="navbar-menu-item home"><a href="https://easylife-dc.be/nl">Home</a></li>
-        <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/huishoudhulp">Huishoudhulp</a></li>
-        <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/strijkatelier">Strijkatelier</a></li>
-        <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/dienstencheques/bestellen">Dienstencheques</a></li>
-        <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/kantoren">Kantoren</a></li>
-        <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/jobs">Jobs</a></li>
-        <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/esf-projecten">ESF</a></li>
-        <li class="navbar-menu-item webshop"><a href="https://easylifeshop.be/">Webshop</a></li>
-      </ul>
-    </div>
-    <div class="small-media-menu">
-      <el-dropdown>
-          <el-button class="button Large">
-            <i class="material-icons">apps</i>
-          </el-button>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item><li class="navbar-menu-item home"><a href="https://easylife-dc.be/nl">Home</a></li></el-dropdown-item>
-            <el-dropdown-item><li class="navbar-menu-item"><a class="small-media-menu_item" href="https://easylife-dc.be/nl/huishoudhulp">Huishoudhulp</a></li></el-dropdown-item>
-            <el-dropdown-item><li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/strijkatelier">Strijkatelier</a></li></el-dropdown-item>
-            <el-dropdown-item><li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/dienstencheques/bestellen">Dienstencheques</a></li></el-dropdown-item>
-            <el-dropdown-item><li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/kantoren">Kantoren</a></li></el-dropdown-item>
-            <el-dropdown-item><li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/jobs">Jobs</a></li></el-dropdown-item>
-            <el-dropdown-item><li class="navbar-menu-item"><a class="small-media-menu_item" href="https://easylife-dc.be/nl/esf-projecten">ESF</a></li></el-dropdown-item>
-            <el-dropdown-item><li class="navbar-menu-item webshop"><a href="https://easylifeshop.be/">Webshop</a></li></el-dropdown-item>
-          </el-dropdown-menu>
-      </el-dropdown>
-    </div>
-  </div>
-    <LanguageSelect class="language-btn"/>
   </div> 
 </template>
 
@@ -57,7 +57,7 @@
     computed: mapGetters(['contact']),
     methods: {
       ...mapActions(['clear']),
-    },
+    }
   }
 </script>
 
@@ -67,21 +67,22 @@
   .header {
     display: flex;
     align-items: center;
+    @media #{$small-and-down}  {
+       height: 100%;
+    }
   }
 
   .navbar {
     height: 136px;
-    max-width: 70vw;
+    width: 70vw;
     margin: 0 auto;
     display: flex;
     align-items: center;
 
      @media #{$medium-and-down}  {
-       flex-direction: row-reverse;
        justify-content: space-between;
        margin-bottom: 30px;
        margin-top: 10px;
-       width: 100vw !important;
       }
 
      @media #{$small-and-down}  {
@@ -111,7 +112,6 @@
         vertical-align: middle;
 
         img {
-          max-width: 111%;
         }
 
         @media #{$small-and-down}  {
@@ -120,7 +120,6 @@
       }
 
       .navbar-wrapper-slogan {
-        color: #9f978f;
         padding: 0 1em;
         padding-left: 32px;
 
@@ -215,17 +214,20 @@
     }
     @media #{$medium-and-down}  {
        display: block;
-
+      }
+    @media #{$small-and-down}  {
+       position: absolute;
       }
   }
  .el-dropdown-menu__item a {
     color: #2c3e50 !important;
  }
   .language-btn {
-    position: absolute;
-    right: 10vw;
-    top: 8vh;
     display: none;
+    padding-left: 50px;
+    @media #{$medium-and-down}  {
+      padding-left: 15px;
+    }
   }
 
 </style>

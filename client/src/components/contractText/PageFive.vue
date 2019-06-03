@@ -75,7 +75,6 @@
   }
 
   .gebruiker {
-    width: 84%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;

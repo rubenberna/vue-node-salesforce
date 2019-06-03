@@ -6,10 +6,10 @@
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item>
-            <span @click="changeLocale('NL')">NL</span>
+            <span class="locale-option" @click="changeLocale('NL')">nl</span>
           </el-dropdown-item>
           <el-dropdown-item>
-            <span @click="changeLocale('FR')">FR</span>
+            <span class="locale-option" @click="changeLocale('FR')">fr</span>
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -34,5 +34,9 @@
   .el-dropdown-link {
     display: flex;
     align-items: center;
+  }
+
+  span {
+    text-transform: uppercase;
   }
 </style>

@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <p class="typed-name-title">Dienstenbedrijf</p>
-    <p class="typed-name">Louis Ballegeer - zaakvoerder</p>
-    <div>
+  <div class="louis-signature">
+    <div class="typed-name">
+      <p class="typed-name-title">Dienstenbedrijf</p>
+      <p class="typed-name-handwrite">Louis Ballegeer - zaakvoerder</p>
+    </div>
+    <div class="signature">
       <img src="../../assets/images/handtekening300.jpeg" >
     </div>
   </div>
@@ -15,18 +17,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import '../../assets/style.scss';
 
-  .typed-name-title {
-    text-transform: uppercase;
-    font-weight: 800;
-  }
+  .louis-signature {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
+    @media #{$medium-and-down}  {
+      height: 300px;
+    }
 
-  .typed-name {
-    font-family: 'Satisfy', cursive; 
-    font-size: 23px;
-  }
-
-  img {
-    width: 300px;
+    .typed-name {
+      .typed-name-title {
+        text-transform: uppercase;
+        font-weight: 800;
+      }
+    
+      .typed-name-handwrite {
+        font-family: 'Satisfy', cursive; 
+        font-size: 23px;
+      }
+    }
+    img {
+      width: 300px;
+    }
   }
 </style>
