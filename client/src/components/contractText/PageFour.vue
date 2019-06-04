@@ -9,10 +9,10 @@
     <p>De gebruiker verbindt zich bij overtreding tot betaling van een forfaitaire schadevergoeding aan het dienstenbedrijf ten bedrage van 1.000 euro per overtreding, onverminderd het recht van het dienstenbedrijf om de werkelijke schade te vorderen indien deze groter zou zijn.</p>
     <p><b>12 Algemene voorwaarden</b></p>
     <p>Alle bepalingen in deze overeenkomst zijn ondergeschikt aan de algemene voorwaarden van het dienstenbedrijf. Het dienstenbedrijf behoudt zich het recht voor om de algemene voorwaarden eenzijdig te wijzigen. De gebruiker zal hiervan op voorhand in kennis worden gebracht en zal in dat geval over een redelijke termijn beschikken om de overeenkomst kostenloos te beëindigen vooraleer de nieuwe voorwaarden in werking treden.</p>
-    <p>Indien de gebruiker de overeenkomst niet opzegt, geeft dit aan dat hij akkoord gaat met de laatst gepubliceerde algemene voorwaarden. De algemene voorwaarden zijn te vinden op <a href="www.Easylife-dc.be/algemenevoorwaarden">www.Easylife-dc.be/algemenevoorwaarden</a></p>
+    <p>Indien de gebruiker de overeenkomst niet opzegt, geeft dit aan dat hij akkoord gaat met de laatst gepubliceerde algemene voorwaarden. De algemene voorwaarden zijn te vinden op <a href="https://easylife-dc.be/nl/algemene-voorwaarden" target="_blank">www.Easylife-dc.be/algemenevoorwaarden</a></p>
     <p>Deze kunnen op vraag van de gebruiker ook per post aangeleverd worden.</p>
     <p><b>13 Privacy en gegevensverwerking</b></p>
-    <p>De gegevens van alle gebruikers worden verwerkt en bijgehouden zoals beschreven in ons privacycharter. Dit privacycharter is te vinden op <a href="www.easylife-dc.be/nl/privacy">www.easylife-dc.be/nl/privacy</a>.</p>
+    <p>De gegevens van alle gebruikers worden verwerkt en bijgehouden zoals beschreven in ons privacycharter. Dit privacycharter is te vinden op <a href="https://easylife-dc.be/nl/privacy" target="_blank">www.easylife-dc.be/nl/privacy</a>.</p>
   </div>
 </template>
 
