@@ -42,7 +42,7 @@
       </div>
       <LanguageSelect class="language-btn"/>
     </div>
-  </div> 
+  </div>
 </template>
 
 <script>
@@ -57,7 +57,7 @@
     computed: mapGetters(['contact']),
     methods: {
       ...mapActions(['clear']),
-    }
+    },
   }
 </script>
 
@@ -110,9 +110,6 @@
         width: 5.5em;
         height: 5.5em;
         vertical-align: middle;
-
-        img {
-        }
 
         @media #{$small-and-down}  {
           display: none;
@@ -224,7 +221,7 @@
  }
   .language-btn {
     display: none;
-    padding-left: 50px;
+    padding-left: 35px;
     @media #{$medium-and-down}  {
       padding-left: 15px;
     }

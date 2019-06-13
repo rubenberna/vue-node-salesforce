@@ -8,7 +8,6 @@
                 Zie contract
                 <i class="fa fa-print"></i>
         </button>
-        <!-- <button class="btn waves-effect" type="submit" @click='deleteContract(contact.External_Id__c)'>Delete from DB</button> -->
         <Clear-btn/>
       </div>
   </div>

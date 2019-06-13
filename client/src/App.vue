@@ -9,7 +9,7 @@
 <script>
   import navbar from '@/components/navbar/Navbar'
   import EasyFooter from '@/components/footer/EasyFooter'
-  import { mapActions } from 'vuex'
+  import { mapActions, mapGetters } from 'vuex'
 
   export default {
     name: 'app',
@@ -17,9 +17,15 @@
       navbar,
       EasyFooter
     },
-    methods: {
-      ...mapActions(['clear'])
+    computed: {
+      ...mapGetters(['locale'])
     },
+    methods: {
+      ...mapActions(['clear', 'changeLocale'])
+    },
+    // mounted() {
+    //   this.locale === 'fr' ? this.changeLocale('FR') : this.changeLocale('NL')
+    // },
     beforeDestroy() {
       this.clear()
     },

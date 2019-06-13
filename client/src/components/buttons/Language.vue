@@ -36,6 +36,10 @@
     align-items: center;
   }
 
+  i {
+    margin-right: 4px;
+  }
+
   span {
     text-transform: uppercase;
   }

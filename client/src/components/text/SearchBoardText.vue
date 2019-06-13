@@ -3,7 +3,7 @@
     <h5>Welkom bij jouw klantenovereenkomst</h5>
     <p>Er werkt een huishoudhulp van EasyLife bij jou thuis.
       Hiervoor moet een verplichte overeenkomst getekend worden.
-    Let op: zonder ondertekende overeenkomst zijn er geen verzekeringsmaatregelen getroffen.</p>
+      Let op: zonder ondertekende overeenkomst zijn er geen verzekeringsmaatregelen getroffen.</p>
     <p>We sommen graag de belangrijkste punten nog even op:</p>
     <ul class="specs-list">
       <li class="specs-item">

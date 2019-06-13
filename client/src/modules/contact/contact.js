@@ -1,18 +1,15 @@
 import api from './api'
 import otherApi from '../contracts/api'
 import { searchOffice } from '@/components/_helpers/findOffice'
-import i18n from '@/plugins/i18n';
 
 const state = {
   contact: null,
   all: null,
-  locale: window.clientInformation.language === 'fr' ? 'FR' : 'NL'
 }
 
 const getters = {
   contact: state => state.contact,
   allDB: state => state.all,
-  locale: state => state.locale
 }
 
 const actions = {
@@ -22,7 +19,9 @@ const actions = {
     const contact =  await api.searchID(dplanId)
     if (contact) {
       commit('setContact', contact)
-      commit('setLocale', contact.language_lead__c)
+      if (contact.language_lead__c) {
+        dispatch('getLocale', contact.language_lead__c, { root: true })
+      } 
       dispatch('getOffice', contact.RegioId__c)
     }
     setTimeout(function() { dispatch('changeLoading', false, { root: true })}, 1500)
@@ -40,10 +39,6 @@ const actions = {
   async getAll({ commit }) {
     const response = await otherApi.getContracts()
     commit('setAll', response)
-  },
-  changeLocale({ commit }, language) {
-    commit('setLocale', language.toLowerCase())
-    i18n.locale = language.toLowerCase()
   }
 }
 
@@ -56,9 +51,6 @@ const mutations = {
   },
   setAll: (state, list) => {
     state.all = list
-  },
-  setLocale: (state, locale) => {
-    state.locale = locale
   }
 }
 
