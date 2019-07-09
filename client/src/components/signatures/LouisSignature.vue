@@ -1,8 +1,8 @@
 <template>
   <div class="louis-signature">
     <div class="typed-name">
-      <p class="typed-name-title">Dienstenbedrijf</p>
-      <p class="typed-name-handwrite">Louis Ballegeer - zaakvoerder</p>
+      <p class="typed-name-title">{{ $t('dienstenbedrijf') }}</p>
+      <p class="typed-name-handwrite">Louis Ballegeer - {{ $t('zaakvoerder') }}</p>
     </div>
     <div class="signature">
       <img src="../../assets/images/handtekening300.jpeg" >
@@ -23,7 +23,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 400px;
+    height: 312px;
     @media #{$medium-and-down}  {
       height: 300px;
     }

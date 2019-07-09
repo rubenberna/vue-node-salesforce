@@ -11,6 +11,7 @@ const getters = {
 const actions = {
   getLocale({ commit }, lang) {
     commit('setLocale', lang)
+    i18n.locale = lang
   },
   changeLocale({ commit }, language) {
     commit('setLocale', language.toLowerCase())

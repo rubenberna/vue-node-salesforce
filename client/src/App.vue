@@ -23,9 +23,9 @@
     methods: {
       ...mapActions(['clear', 'changeLocale'])
     },
-    // mounted() {
-    //   this.locale === 'fr' ? this.changeLocale('FR') : this.changeLocale('NL')
-    // },
+    mounted() {
+      this.locale === 'fr' ? this.changeLocale('FR') : this.changeLocale('NL')
+    },
     beforeDestroy() {
       this.clear()
     },

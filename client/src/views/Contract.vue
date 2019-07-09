@@ -25,7 +25,7 @@
           <button v-show="!loading"
                   class="btn waves-effect waves-light print-btn"
                   type="submit"
-                  @click.prevent="makePDF">Bewaren
+                  @click.prevent="makePDF">{{ $t('bewaren') }}
             <i class="material-icons right">
               picture_as_pdf
             </i>
@@ -73,7 +73,7 @@
       PageFive,
     },
     computed: {
-      ...mapGetters(['contact', 'flashSticker', 'loading', 'contractForm']),
+      ...mapGetters(['contact', 'flashSticker', 'loading', 'contractForm', 'locale']),
     },
     methods: {
       ...mapActions(['createContract', 'changeLoading', 'updateForm']),
@@ -84,11 +84,17 @@
       },
       validateContract( { isEmpty, data } ) {        
         if(isEmpty) {
-          this.flashError('Gebruik je muis om je handtekening te tekenen')
+          let msgMouse;
+          this.locale === 'fr' ? msgMouse = 'Utilisez votre souris pour signer' : msgMouse = 'Gebruik je muis om je handtekening te tekenen'
+          this.flashError(msgMouse)
         } else if (!this.contractForm.typedName) {
-          this.flashError('Geef eerst uw naam in')
+          let msgName;
+          this.locale === 'fr' ? msgName = 'Entrez votre nom' : msgName = 'Geef eerst uw naam in'
+          this.flashError(msgName)
         } else if (!this.contractForm.checkBoxOne || !this.contractForm.checkBoxTwo || !this.contractForm.checkBoxThree) {
-            this.flashError('U moet eerst akkoord gaan met de algemene Easy Life T&C')
+          let msgTC;
+          this.locale === 'fr' ? msgTC = 'Vous devez accepter les conditions générales d’Easy Life T&C' : msgTC = 'U moet eerst akkoord gaan met de algemene Easy Life T&C'
+          this.flashError(msgTC)
         } else {
             this.updateForm({ name: 'signature', inputValue: data })
             this.updateForm({ name: 'signed', inputValue: true })

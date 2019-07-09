@@ -16,8 +16,8 @@ const actions = {
   async searchID({ commit, dispatch }, dplanId) {
     commit('setContact', null)
     dispatch('changeLoading', true, { root: true })
-    const contact =  await api.searchID(dplanId)
-    if (contact) {
+    const contact =  await api.searchID(dplanId)    
+    if (contact !== 'not_found') {
       commit('setContact', contact)
       if (contact.language_lead__c) {
         dispatch('getLocale', contact.language_lead__c, { root: true })

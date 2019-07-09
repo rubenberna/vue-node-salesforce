@@ -9,7 +9,7 @@
           <loader/>
         </div>
         <div v-else>
-          <SearchContact v-if="!contact"
+          <SearchContact v-if="contact === null || contact === 'not_found'"
                          @setFlash="flashOn"/>
           <View-contract v-else-if="contact.Signed_Contract__c || contractForm.signed" 
           />

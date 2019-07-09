@@ -1,22 +1,14 @@
 <template>
   <div class="search-board-specs">
-    <h5>Welkom bij jouw klantenovereenkomst</h5>
-    <p>Er werkt een huishoudhulp van EasyLife bij jou thuis.
-      Hiervoor moet een verplichte overeenkomst getekend worden.
-      Let op: zonder ondertekende overeenkomst zijn er geen verzekeringsmaatregelen getroffen.</p>
-    <p>We sommen graag de belangrijkste punten nog even op:</p>
+    <h5>{{ $t('welkom_msg') }}</h5>
+      <p>{{ $t('welkom_msg_intro') }}</p>
+      <p>{{ $t('we_sommen_graag') }}</p>
     <ul class="specs-list">
-      <li class="specs-item">
-        De huishoudhulp mag enkel werken in jouw privéwoning.
+      <li class="specs-item">{{ $t('de_huishoudhulp_mag') }}</li>
+      <li class="specs-item">{{ $t('gelieve_bij_elke') }}</li>
+      <li class="specs-item">{{ $t('gebruik_enkel_cheques') }}
       </li>
-      <li class="specs-item">
-        Gelieve bij elke prestatie te betalen.
-      </li>
-      <li class="specs-item">
-        Gebruik enkel cheques van gebruikers woonachtig op het poetsadres.
-      </li>
-      <li class="specs-item">
-        Geef alle wijzigingen aan de planning meteen door aan het kantoor.
+      <li class="specs-item">{{ $t('geef_alle_wijzigingen') }}
       </li>
     </ul>
   </div>

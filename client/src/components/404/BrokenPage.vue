@@ -1,8 +1,8 @@
 <template>
   <div class="broken-page">
     <img src="../../assets/images/broken_small.png" alt="">
-    <h5>"Bear" with us.. Something went wrong</h5>
-    <h6>Er ging iets mis, gelieve ons te <a href="https://easylife-dc.be/nl/contact" target="_">contacteren</a> or ga terug naar de <router-link to="/">startpagina.</router-link></h6> 
+    <h5>{{ $t('bear_with_us') }}</h5>
+    <h6>{{ $t('er_ging_iets_mis') }}<a href="https://easylife-dc.be/nl/contact" target="_">{{ $t('contacteren') }}</a> {{ $t('or_ga_terug_naar_de') }} <router-link to="/">{{ $t('startpagina') }}.</router-link></h6> 
   </div>
 </template>
 

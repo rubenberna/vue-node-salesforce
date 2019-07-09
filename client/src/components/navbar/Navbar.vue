@@ -8,19 +8,19 @@
           </a>
         </div>
         <div class="navbar-wrapper-slogan">
-          <p style="font-weight:300; font-size: 16px">Het geheim van meer dan <strong>17.500</strong> gezinnen in Vlaanderen en Brussel</p>
+          <p style="font-weight:300; font-size: 16px">{{ $t('navbar_intro') }}</p>
         </div>
       </div>
       <div class="navbar-menu">
         <ul class="navbar-menu-list">
-          <li class="navbar-menu-item home"><a href="https://easylife-dc.be/nl">Home</a></li>
-          <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/huishoudhulp">Huishoudhulp</a></li>
-          <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/strijkatelier">Strijkatelier</a></li>
-          <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/dienstencheques/bestellen">Dienstencheques</a></li>
-          <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/kantoren">Kantoren</a></li>
-          <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/jobs">Jobs</a></li>
-          <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/esf-projecten">ESF</a></li>
-          <li class="navbar-menu-item webshop"><a href="https://easylifeshop.be/">Webshop</a></li>
+          <li class="navbar-menu-item home"><a href="https://easylife-dc.be/nl">{{ $t('home') }}</a></li>
+          <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/huishoudhulp">{{ $t('huishoud_hulp') }}</a></li>
+          <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/strijkatelier">{{ $t('strijkatelier') }}</a></li>
+          <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/dienstencheques/bestellen">{{ $t('dienstencheques') }}</a></li>
+          <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/kantoren">{{ $t('kantoren') }}</a></li>
+          <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/jobs">{{ $t('jobs') }}</a></li>
+          <li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/esf-projecten">{{ $t('esf') }}</a></li>
+          <li class="navbar-menu-item webshop"><a href="https://easylifeshop.be/">{{ $t('webshop') }}</a></li>
         </ul>
       </div>
       <div class="small-media-menu">
@@ -29,14 +29,14 @@
               <i class="material-icons">apps</i>
             </el-button>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item><li class="navbar-menu-item home"><a href="https://easylife-dc.be/nl">Home</a></li></el-dropdown-item>
-              <el-dropdown-item><li class="navbar-menu-item"><a class="small-media-menu_item" href="https://easylife-dc.be/nl/huishoudhulp">Huishoudhulp</a></li></el-dropdown-item>
-              <el-dropdown-item><li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/strijkatelier">Strijkatelier</a></li></el-dropdown-item>
-              <el-dropdown-item><li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/dienstencheques/bestellen">Dienstencheques</a></li></el-dropdown-item>
-              <el-dropdown-item><li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/kantoren">Kantoren</a></li></el-dropdown-item>
-              <el-dropdown-item><li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/jobs">Jobs</a></li></el-dropdown-item>
-              <el-dropdown-item><li class="navbar-menu-item"><a class="small-media-menu_item" href="https://easylife-dc.be/nl/esf-projecten">ESF</a></li></el-dropdown-item>
-              <el-dropdown-item><li class="navbar-menu-item webshop"><a href="https://easylifeshop.be/">Webshop</a></li></el-dropdown-item>
+              <el-dropdown-item><li class="navbar-menu-item home"><a href="https://easylife-dc.be/nl">{{ $t('home') }}</a></li></el-dropdown-item>
+              <el-dropdown-item><li class="navbar-menu-item"><a class="small-media-menu_item" href="https://easylife-dc.be/nl/huishoudhulp">{{ $t('huishoud_hulp') }}</a></li></el-dropdown-item>
+              <el-dropdown-item><li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/strijkatelier">{{ $t('strijkatelier') }}</a></li></el-dropdown-item>
+              <el-dropdown-item><li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/dienstencheques/bestellen">{{ $t('dienstencheques') }}</a></li></el-dropdown-item>
+              <el-dropdown-item><li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/kantoren">{{ $t('kantoren') }}</a></li></el-dropdown-item>
+              <el-dropdown-item><li class="navbar-menu-item"><a href="https://easylife-dc.be/nl/jobs">{{ $t('jobs') }}</a></li></el-dropdown-item>
+              <el-dropdown-item><li class="navbar-menu-item"><a class="small-media-menu_item" href="https://easylife-dc.be/nl/esf-projecten">{{ $t('esf') }}</a></li></el-dropdown-item>
+              <el-dropdown-item><li class="navbar-menu-item webshop"><a href="https://easylifeshop.be/">{{ $t('webshop') }}</a></li></el-dropdown-item>
             </el-dropdown-menu>
         </el-dropdown>
       </div>
@@ -74,7 +74,7 @@
 
   .navbar {
     height: 136px;
-    width: 70vw;
+    min-width: 87vw;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -220,7 +220,7 @@
     color: #2c3e50 !important;
  }
   .language-btn {
-    display: none;
+    /* display: none; */
     padding-left: 35px;
     @media #{$medium-and-down}  {
       padding-left: 15px;

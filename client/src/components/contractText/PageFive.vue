@@ -1,12 +1,12 @@
 <template>
   <div id="page-five">
-    <p><b>14 Betwistingen</b></p>
-    <p>Bij betwistingen voortvloeiend uit deze overeenkomst is de Rechtbank van Antwerpen bevoegd.</p>
-    <p>Deze overeenkomst werd getekend te {{ contact ? contact.office : currContract.office.S }}, op {{ contact ? today : signedDate }}</p>
-    <p>De gebruiker verklaart hierbij dat:</p>
+    <p><b>{{ $t('14_Betwistingen') }}</b></p>
+    <p>{{ $t('bij_betwistingen_voortvloeiend') }}</p>
+    <p>{{ $t('deze_overeenkomst') }} {{ contact ? contact.office : currContract.office.S }}, {{ $t('op') }} {{ contact ? today : signedDate }}</p>
+    <p>{{ $t('de_gebruiker_verklaart_dat') }}:</p>
     <SavedCheckbox v-show="currContract"/>
     <Check-box-form v-show="!currContract && contact"/>
-    <p>Beide partijen bevestigen voor gelezen en goedgekeurd</p>
+    <p>{{ $t('beide_partijen_bevestigen') }}</p>
     <div id='signatures' style="display: flex; justify-content: space-between">
       <div class="gebruiker">
        <Typed-name/>
@@ -45,14 +45,19 @@
       SavedCheckbox
     },
     computed: {
-      ...mapGetters(['currContract', 'contact', 'contractForm']),
+      ...mapGetters(['currContract', 'contact', 'contractForm', 'locale']),
       signedDate() {
         moment.locale('nl-be');
         return moment(this.currContract.signedat.S).format("MMM Do YYYY")
         },
       today() {
-        moment.locale('nl-be');
-        return moment(new Date()).format("MMM Do YYYY")
+        if (this.locale === 'fr') {
+          moment.locale('fr');
+          return moment(new Date()).format("MMM Do YYYY")
+        } else {
+          moment.locale('nl-be');
+          return moment(new Date()).format("MMM Do YYYY")
+        }
       }, 
     },
     methods: {

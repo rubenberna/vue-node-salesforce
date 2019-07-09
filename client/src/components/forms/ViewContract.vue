@@ -1,11 +1,11 @@
 <template>
   <div class="search-board-result">
-    <h4 class="animated fadeIn slow">Welkom {{contact.Name}} !</h4>
+    <h4 class="animated fadeIn slow">{{ $t('welkom') }} {{contact.Name}} !</h4>
       <div class="search-board-result-actions">
         <button class="btn grey accent-4 animated slideInUp slow"
                 type="submit"
                 @click="viewContract(contact.External_Id__c)">
-                Zie contract
+                {{ $t('zie_contract') }}
                 <i class="fa fa-print"></i>
         </button>
         <Clear-btn/>

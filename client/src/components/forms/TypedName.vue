@@ -3,7 +3,7 @@
     <p class="typed-name-title">Gebruiker</p>
     <div v-if="!contractForm.signed && !currContract">
       <input type="text" 
-            placeholder="Type your name" 
+            :placeholder="typedPlacehoder"
             @change="updateForm({name: 'typedName', inputValue: $event.target.value })">
     </div>
     <div v-else>
@@ -20,7 +20,10 @@
   export default {
     name: 'typed-name',
     computed: {
-      ...mapGetters(['currContract', 'contractForm'])
+      ...mapGetters(['currContract', 'contractForm', 'locale']),
+      typedPlacehoder() {
+        return this.locale === 'fr' ? 'Ecrivez votre nom' : 'Typ uw naam'
+      }
     },
     methods: {
       ...mapActions(['updateForm'])

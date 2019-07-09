@@ -2,7 +2,7 @@
   <div class="frame">
     <div>
       <img src="../../assets/images/signed.jpeg">
-      <p class="frame-subtitle">ONDERTEKEND</p>
+      <p class="frame-subtitle">{{ $t('ondertekend') }}</p>
     </div>
     <div>
       <p class="frame-title">{{ currContract ? signedDate : today  }}</p>
@@ -10,7 +10,7 @@
     </div>
     <div>
       <p class="frame-title">
-        Getekend door - {{ currContract ? currContract.name.S : contact.Name  }}
+        {{ $t('getekend_door') }} - {{ currContract ? currContract.name.S : contact.Name  }}
       </p>
       <p class="frame-subtitle">
         IP: {{ currContract ? currContract.ipaddress.S : contractForm.ipAddress }}
@@ -26,18 +26,34 @@ import moment from 'moment'
 export default {
   name: 'signed-stamp',
   computed: {
-    ...mapGetters(['contact', 'currContract', 'contractForm']),
+    ...mapGetters(['contact', 'currContract', 'contractForm', 'locale']),
     today() {
-      moment.locale('nl-be');
-      return moment(new Date()).format("MMM Do YYYY")
+      if (this.locale === 'fr') {
+        moment.locale('fr');
+        return moment(new Date()).format("MMM Do YYYY")
+      } else {
+        moment.locale('nl-be');
+        return moment(new Date()).format("MMM Do YYYY")
+      }
+     
     },
     time() {
-      moment.locale('nl-be');
-      return moment(Date.now()).format('h:mm:ss a')
+      if (this.locale === 'fr') {
+        moment.locale('fr');
+        return moment(Date.now()).format('h:mm:ss a')
+      } else {
+        moment.locale('nl-be');
+        return moment(Date.now()).format('h:mm:ss a')
+      }
     },
     signedDate() {
-      moment.locale('nl-be');
+      if (this.locale === 'fr') {
+        moment.locale('fr');
       return moment(this.currContract.signedat.S).format("MMM Do YYYY")
+      } else {
+         moment.locale('nl-be');
+        return moment(this.currContract.signedat.S).format("MMM Do YYYY")
+      }
     }
   },
 }

@@ -1,16 +1,16 @@
 <template>
   <div>
-    <p>Andere gebruiker ? 
+    <p>{{ $t('andere_gebruiker') }}
       <span class="strong"
-            @click='clear'>hier
+            @click='clear'>{{ $t('hier') }}
       </span>
-      je account opnieuw in.
+      {{ $t('je_account_opnieuw_in') }}
     </p>
   </div>
 </template>
 
 <script>
-  import {mapActions} from 'vuex'
+  import { mapActions } from 'vuex'
   
   export default {
     name: 'clear',

@@ -1,12 +1,12 @@
 <template>
   <div>
     <el-dialog
-      title="Beschikt u al over ecologische schoonmaakmiddelen?"
+      :title="modalTitle"
       :visible.sync="dialogVisible"
       width="30%">
       <div class="modal-question-box">
-        <p class="modal-question">Ja - Fantastisch! <i class="material-icons">check</i></p>
-        <p class="modal-question">Neen - Neem dan snel eens een kijkje op onze webshop !</p>
+        <p class="modal-question">{{ $t('fantastisch') }} <i class="material-icons">check</i></p>
+        <p class="modal-question">{{ $t('neem_dan_snel') }}</p>
       </div>
         <a 
           class="waves-effect waves-light btn modal-link-btn"
@@ -20,12 +20,20 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex'
+
   export default {
     name: 'modal',
     props: {
       dialogVisible: {
         type: Boolean,
         default: false
+      }
+    },
+    computed: {
+      ...mapGetters(['locale']),
+      modalTitle() {
+       return this.locale === 'fr' ? 'Possedez-vous déjà un produit de nettoyage écologique?' : 'Beschikt u al over ecologische schoonmaakmiddelen?'
       }
     },
     methods: {

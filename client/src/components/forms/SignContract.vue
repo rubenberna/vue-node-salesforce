@@ -1,13 +1,13 @@
 <template>
   <div class="search-board-result">
     <h4 class="animated fadeIn slow">
-        Hallo {{contact.Name}}
+      {{ $t('hallo') }} {{contact.Name}}
     </h4>
     <div class="search-board-result-actions">
       <button class="btn red darken-2 animated slideInUp slow"
               type="submit"
               @click="navigate(contact.External_Id__c)">
-              Contract ondertekenen
+              {{ $t('contract_ondertekenen') }} 
               <i class="fa fa-book"></i>
       </button>
       <Clear-btn/>

@@ -8,11 +8,13 @@ class QueryService {
       dplanId
     })
     .then(res =>  {
-      store.dispatch('createFlash', {msg: 'Succesvol ingelogd', type: 'success'})
+      const succMsg = store.getters.locale === 'fr' ? 'Connecté avec succès' : 'Succesvol ingelogd'
+      store.dispatch('createFlash', { msg: succMsg, type: 'success'})
       return res.data })
     .catch(err => {
-      store.dispatch('createFlash', {msg: 'Er werd geen gebruiker gevonden met deze ID', type: 'error'})
-      return err
+      const errorMsg = store.getters.locale === 'fr' ? 'Aucun utilisateur n\'a été identifié sous cet ID' : 'Er werd geen gebruiker gevonden met deze ID'
+      store.dispatch('createFlash', { msg: errorMsg, type: 'error'})
+      return 'not_found'
     })
   }
 }

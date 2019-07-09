@@ -2,39 +2,39 @@
   <div class="easy-footer">
     <div class="easy-footer-wrapper">
       <div class="social">
-        <h2>Blijf op de hoogte</h2>
+        <h2>{{ $t('blijf_op_de_hoogte') }}</h2>
         <div class="social-links">
           <div class="social-links-tips">
-            <h3>Huishoudtips</h3>
+            <h3>{{ $t('huishoudtips') }}</h3>
             <ul style="list-style: none;">
-              <li><i class="fa fa-angle-right"></i><a href="https://easylife-dc.be/nl/huishoudtips/11-tips-voor-je-auto-bij-vriesweer" target="_blank" class="social-links-item link">11 tips voor je auto bij vriesweer!</a></li>
-              <li><i class="fa fa-angle-right"></i><a href="https://easylife-dc.be/nl/huishoudtips/easylifetip-met-mc-lily-stofzuigen" target="_blank" class="social-links-item link">#EasyLifeTip met MC Lily: Stofzuigen</a></li>
-              <li><i class="fa fa-angle-right"></i><a href="https://easylife-dc.be/nl/huishoudtips/easylifetip-met-mc-lily-de-wondergom" target="_blank" class="social-links-item link">#EasyLifeTip met MC Lily: De Wondergom</a></li>
-              <li><a href="https://easylife-dc.be/nl/huishoudtips" target="_blank" class="social-links-item link" style="margin-left: 11px;">Meer tips…</a></li>
+              <li><i class="fa fa-angle-right"></i><a href="https://easylife-dc.be/nl/huishoudtips/11-tips-voor-je-auto-bij-vriesweer" target="_blank" class="social-links-item link">{{ $t('11_tips') }}</a></li>
+              <li><i class="fa fa-angle-right"></i><a href="https://easylife-dc.be/nl/huishoudtips/easylifetip-met-mc-lily-stofzuigen" target="_blank" class="social-links-item link">{{ $t('mc_lily') }}</a></li>
+              <li><i class="fa fa-angle-right"></i><a href="https://easylife-dc.be/nl/huishoudtips/easylifetip-met-mc-lily-de-wondergom" target="_blank" class="social-links-item link">{{ $t('mc_lily_wondergom') }}</a></li>
+              <li><a href="https://easylife-dc.be/nl/huishoudtips" target="_blank" class="social-links-item link" style="margin-left: 11px;">{{ $t('meer_tips') }}</a></li>
             </ul>
           </div>
           <div class="social-links-media">
             <h3><a href="https://www.facebook.com/easylifedienstencheques/" target="_blank" style="color: #fff;"> <span class="link">Facebook</span><i class="fa fa-facebook-square"></i></a></h3>
-            <p><a href="https://www.facebook.com/easylifedienstencheques/" target="_blank" class="link">Like ons</a> en lees onze huishoudtips op je tijdslijn</p>
+            <p><a href="https://www.facebook.com/easylifedienstencheques/" target="_blank" class="link">{{ $t('like_huishoudtips') }}</a></p>
           </div>
         </div>
       </div>
 
       <div class="support">
-        <h2>Hoe kunnen we u helpen?</h2>
+        <h2>{{ $t('helpen') }}</h2>
         <div class="support-container">
           <div class="support-text">
             <div class="support-text-segment">
               <h3 class="phone"><i class="fa fa-phone"></i>0800 62080</h3>
-              <p>Vandaag nog open tot 18u</p>
+              <p>{{ $t('vandaag') }}</p>
             </div>
             <div class="support-text-segment small-media">
-              <h3>Vraag <a href="https://easylife-dc.be/nl/huishoudhulp-aanvragen" target="_blank" class="link">poetshulp</a> aan</h3>
-              <p>Vrijblijvend, en zo gebeurd</p>
+              <h3> <a href="https://easylife-dc.be/nl/huishoudhulp-aanvragen" target="_blank" class="link">{{ $t('vraag_poetshulp') }}</a></h3>
+              <p>{{ $t('vrijblijvend') }}</p>
             </div>
             <div class="support-text-segment small-media">
-              <h3>Vul het <a href="https://easylife-dc.be/nl/contact" target="_blank" class="link">contactformulier</a> in</h3>
-              <p>Vul het contactformulier in</p>
+              <h3><a href="https://easylife-dc.be/nl/contact" target="_blank" class="link">{{ $t('contactformulier') }}</a></h3>
+              <p>{{ $t('andere_vraag') }}</p>
             </div>
           </div>
           <div class="support-visual">
@@ -42,7 +42,7 @@
               <img src="../../assets/images/thumb.jpg" alt="">
             </div>
             <div class="support-label">
-              EasyLife servicedesk
+              {{ $t('easyLife servicedesk') }}
             </div>
           </div>
         </div>

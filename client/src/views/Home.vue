@@ -4,18 +4,18 @@
     <div class="home-icons">
       <div class="icon">
         <img src="../assets/images/iron.svg">
-        <h2>Bij u in de buurt</h2>
-        <p>Persoonlijk contact blijft belangrijk. Met 18 locaties in Vlaanderen, is er altijd een EasyLife kantoor <b>in uw buurt</b> waar u terecht kan.</p>
+        <h2>{{ $t('bij_u_in_de_buurt') }}</h2>
+        <p>{{ $t('bij_u_in_de_buurt_text') }}</p>
       </div>
       <div class="icon">
         <img src="../assets/images/bucket.svg">
-        <h2>Eerste klas service</h2>
-        <p>Voor al onze <b>bekwame vakmensen</b> staan we garant. En wij niet alleen, onze klanten geven ons gemiddeld een uitmuntende score van 4.6 op 5.</p>
+        <h2>{{ $t('eerste_klas_service') }}</h2>
+        <p>{{ $t('eerste_klas_service_text') }}</p>
       </div>
       <div class="icon">
         <img src="../assets/images/vacuum.svg">
-        <h2>Betaalbare Huishoudhulp</h2>
-        <p>Op zoek naar betaalbare huishoudhulp? Onze poetshulp komt langs vanaf € 6,30/u met dienstencheques. <b>Er zijn geen extra kosten</b>.</p>
+        <h2>{{ $t('betaalbare_huishoudhulp') }}</h2>
+        <p>{{ $t('betaalbare_huishoudhulp_text') }}.</p>
       </div>
     </div>
   </div>
@@ -80,8 +80,11 @@ export default {
        margin-top: -40px;
     }
     .icon {
-      width: 22%;
+      width: 26%;
 
+       @media #{$medium-and-down}  {
+          width: 100%;
+        }
       h2 {
         font-size: 1.2em;
         font-weight: 600;
@@ -89,10 +92,6 @@ export default {
         text-align: center;
         margin-top: .5em;
         text-transform: uppercase;
-
-          @media #{$medium-and-down}  {
-            /* font-size: 50%; */
-         }
       }
 
       p {

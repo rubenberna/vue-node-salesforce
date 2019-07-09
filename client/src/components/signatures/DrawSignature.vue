@@ -1,17 +1,17 @@
 <template>
   <div v-show="!contractForm.signature">
-    <div style="margin-top: 52px;">
-      <p style="font-style: italic; text-align: center;">Gebruik uw <i class="material-icons">mouse</i> om uw overeenkomst te tekenen</p>
+    <div style="margin-top: 27px;">
+      <p style="font-style: italic; text-align: center;">{{ $t('gebruik_uw') }} <i class="material-icons">mouse</i> {{ $t('om_uw_overeenkomst_te_tekenen') }}</p>
       <VueSignaturePad
       id="signature"
-      width="507px"
+      width="450px"
       height="270px"
       ref="signaturePad"
       />
     </div>
     <div class="confirm-buttons">
-      <a class="waves-effect btn-flat erase-btn" v-show='!signed' @click="undo">Wis</a>
-      <a class="waves-effect btn light-blue darken-4 confirm-btn" v-show="!signed" @click="finishContract">Bevestig</a>
+      <a class="waves-effect btn-flat erase-btn" v-show='!signed' @click="undo">{{ $t('wis') }}</a>
+      <a class="waves-effect btn light-blue darken-4 confirm-btn" v-show="!signed" @click="finishContract">{{ $t('bevestig') }}</a>
     </div>
   </div>
 </template>

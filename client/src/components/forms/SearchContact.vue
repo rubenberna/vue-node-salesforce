@@ -5,14 +5,14 @@
             v-model='dplanId'>
     <label for="email_inline" 
             style="color: #fff; text-align: center; width:60%">
-            Type ID
+            {{ $t('type_id') }}
     </label>
     <span class="helper-text"></span>
     <button class="btn waves-effect waves-light search"
             type="submit"
             data-target="modal1"
             @click="runSearch">
-            Zoeken
+            {{ $t('zoeken') }}
             <i class="material-icons right">send</i>
     </button>
   </div>
