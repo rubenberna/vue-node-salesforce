@@ -83,5 +83,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 60%;
   }
 </style>

@@ -25,7 +25,7 @@
           <button v-show="!loading"
                   class="btn waves-effect waves-light print-btn"
                   type="submit"
-                  @click.prevent="makePDF">{{ $t('bewaren') }}
+                  @click.stop="makePDF">{{ $t('bewaren') }}
             <i class="material-icons right">
               picture_as_pdf
             </i>
@@ -112,8 +112,11 @@
           const screen = window.innerWidth
           await pdfCreator.printPdf(pageOne, pageTwo, pageThree, pageFour, pageFive, screen)
           this.changeLoading(false)
-          setTimeout(() => this.$router.push('/'), 2000 )
+          setTimeout(() => this.$router.push('/'), 3000 )
       },
+      closeMe() {
+        this.modalOpen = false
+      }
     },
     created() {
       this.setIPAddress()

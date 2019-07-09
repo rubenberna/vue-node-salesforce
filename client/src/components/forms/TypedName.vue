@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="typed-name-title">Gebruiker</p>
+    <p class="typed-name-title">{{ $t('gebruiker') }}</p>
     <div v-if="!contractForm.signed && !currContract">
       <input type="text" 
             :placeholder="typedPlacehoder"
