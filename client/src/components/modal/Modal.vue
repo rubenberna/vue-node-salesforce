@@ -3,6 +3,7 @@
     <el-dialog
       :title="modalTitle"
       :visible.sync="dialogVisible"
+      :before-close="closeModal"
       width="30%">
       <div class="modal-question-box">
         <p class="modal-question">{{ $t('fantastisch') }} <i class="material-icons">check</i></p>
@@ -13,7 +14,6 @@
           href="https://easylife.poets.expert/" 
           target="_blank" 
           rel="noopener noreferrer"
-          @click="closeModal"
           >EasyLifeshop</a>
     </el-dialog>
   </div>
@@ -77,5 +77,4 @@
       width: 85% !important;
     }
   }
-
 </style>

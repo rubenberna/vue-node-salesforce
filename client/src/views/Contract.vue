@@ -35,7 +35,7 @@
     </transition>
     </div>
     <Modal :dialogVisible='modalOpen' 
-            @toggleDialog='modalOpen = $event'
+            @toggleDialog='closeModal'
     />
   </div>
 </template>
@@ -77,6 +77,9 @@
     },
     methods: {
       ...mapActions(['createContract', 'changeLoading', 'updateForm']),
+      closeModal(e){
+        this.modalOpen = e
+      },
       setIPAddress() {
         $.getJSON("https://jsonip.com?callback=?", (data) => {
           this.updateForm({ name: 'ipAddress', inputValue: data.ip })
@@ -114,9 +117,6 @@
           this.changeLoading(false)
           setTimeout(() => this.$router.push('/'), 3000 )
       },
-      closeMe() {
-        this.modalOpen = false
-      }
     },
     created() {
       this.setIPAddress()
