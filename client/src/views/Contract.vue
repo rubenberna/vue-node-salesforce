@@ -115,7 +115,7 @@
           const screen = window.innerWidth
           await pdfCreator.printPdf(pageOne, pageTwo, pageThree, pageFour, pageFive, screen)
           this.changeLoading(false)
-          setTimeout(() => this.$router.push('/'), 3000 )
+          setTimeout(() => this.$router.push('/'), 4000 )
       },
     },
     created() {
@@ -176,7 +176,7 @@
   .loader {
     width: 90px;
     position: absolute;
-    left: 1vw;
-    bottom: 2vh;
+    left: 40vw;
+    bottom: 1vh;
   }
 </style>

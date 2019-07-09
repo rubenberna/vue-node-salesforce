@@ -81,7 +81,7 @@ export default {
     }
     .icon {
       width: 26%;
-
+      height: 370px;
        @media #{$medium-and-down}  {
           width: 100%;
         }
