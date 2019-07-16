@@ -22,6 +22,7 @@ const actions = {
   async createContract({ rootState }) {
     const { contact } = rootState.contact
     const { contractForm } = rootState.contractForm
+    const { locale } = rootState.lang
     
     const finalContract = {
       name: contact.Name,
@@ -38,7 +39,8 @@ const actions = {
       street: contact.MailingAddress.street || 'not provided',
       postalCode: contact.MailingAddress.postalCode || 'not provided',
       city: contact.MailingAddress.city || 'not provided',
-      id: contact.Id
+      id: contact.Id,
+      locale
     }
     api.addContract(finalContract)
   },

@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
 router.post('/add', async (req, res) => {
   const contact = req.body
   salesforce.updateSF(contact.id)
-  nodemailer.sendEmail(contact.email, contact.externalId)
+  nodemailer.sendEmail(contact.email, contact.externalId, contact.locale)
   await dynamo.createContact(contact)
     .then(data => res.sendStatus(200))
     .catch(err => res.status(404).send(err))
