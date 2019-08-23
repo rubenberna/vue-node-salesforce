@@ -24,7 +24,7 @@ module.exports = {
       from: '"EasyLife" <Customercare@easylifedc.be>', // sender address
       to: email, // list of receivers
       subject: "Easy Life - Une copie de votre contrat", // Subject line
-      html: `<p>Chers client,</p> <p>Nous avons bien reçu votre contrat signé.</p> <p>De ce fait, nous vous en remerçions.</p> <p>Votre contrat signé reste pour autant disponible pour consultation sur https://sign.easylifedc.be . </p> <p>Quand vous entrez à nouveau votre code <b>${id}</b>et que vous cliquez sur le bouton "voir contrat", votre contrat apparaitra alors.</p><p>Pour tout autre question ou information supplémentaire,veuillez vous adresser à notre service client: soit par téléphone au 0800 62 080 ...ou par courrier électronique customercare@easylifedc.be .</p> <p>Cordialement, </p> <p>L'équipe service clientèle</p><p>Easy Life</p><p>Draaiboomstraat 6, 2160 Wommelgem</p><p>03/369 89 03</p>`, // html body
+      html: `<p>Chers client,</p> <p>Nous avons bien reçu votre contrat signé.</p> <p>De ce fait, nous vous en remerçions.</p> <p>Votre contrat signé reste pour autant disponible pour consultation sur https://sign.easylifedc.be . </p> <p>Quand vous entrez à nouveau votre code <b>${id}</b> et que vous cliquez sur le bouton "voir contrat", votre contrat apparaitra alors.</p><p>Pour tout autre question ou information supplémentaire,veuillez vous adresser à notre service client: soit par téléphone au 0800 62 080 ...ou par courrier électronique customercare@easylifedc.be .</p> <p>Cordialement, </p> <p>L'équipe service clientèle</p><p>Easy Life</p><p>Draaiboomstraat 6, 2160 Wommelgem</p><p>03/369 89 03</p>`, // html body
     }
 
     let message = locale === 'nl' ? nlMessage : frMessage

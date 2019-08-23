@@ -1,5 +1,4 @@
 const express = require('express');
-const db = require('../config/postgres');
 const dynamo = require('../config/dynamodb');
 const salesforce = require('../config/salesforce');
 const nodemailer = require('../config/nodemailer');
