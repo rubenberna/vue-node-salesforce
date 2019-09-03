@@ -7,7 +7,7 @@
     <div v-else class="container">
       <div class="container" 
            style="text-align:justify;">
-       <PageOne/>
+       <PageOne />
        <PageTwo/>
        <PageThree/>
        <PageFour/>  

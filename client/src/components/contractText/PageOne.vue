@@ -14,9 +14,9 @@
       <p>{{ $t('EasyLife_dienstencheques_als_commerciële') }}</p>
       <p>{{ $t('hierna_genoemd_het') }} <b>{{ $t('dienstenbedrijf') }}</b>,</p>
       <div class="page-one-wrapper-user-details">
-        <p>{{ $t('en') }} {{ currContract ? currContract.name.S : contact.Name }}</p>
-        <p>{{ currContract ? currContract.street.S : contact.MailingAddress.street }}</p>
-        <p>{{ currContract ? currContract.postalcode.N : contact.MailingAddress.postalCode }} {{ currContract ? currContract.city.S : contact.MailingAddress.city }}</p>
+        <p>{{ $t('en') }} {{ currContract ? (currContract.name.S || 'n/a') : (contact.Name || 'n/a')}}</p>
+        <p>{{ currContract ? ( currContract.street.S || 'n/a'): (contact.MailingAddress.street || 'n/a')}}</p>
+        <p>{{ currContract ? (currContract.postalcode.N || 'n/a'): (contact.MailingAddress.postalCode || 'n/a')}} {{ currContract ? (currContract.city.S || 'n/a'): (contact.MailingAddress.city || 'n/a')}}</p>
       </div>
       <p style="padding-top: 8px;">{{ $t('hierna_genoemd_de') }}<b>{{ $t('gebruiker') }}</b> {{ $t('wordt overeengekomen hetgeen volgt') }}:</p>
       <p><b>{{ $t('1_Inleiding') }}</b></p>
