@@ -17,6 +17,7 @@
   },
   "scripts": {
     "start": "node app.js",
+    "build-client": "cd client && npm run build",
     "dev": "nodemon app.js",
     "deploy": "eb deploy amazon"
   }

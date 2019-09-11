@@ -1,7 +1,6 @@
 import i18n from '@/plugins/i18n';
 
 const state = {
-  // locale: window.clientInformation.language === 'fr' ? 'fr' : 'nl'
   locale: 'nl'
 }
 
