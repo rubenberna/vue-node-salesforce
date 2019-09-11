@@ -1,7 +1,7 @@
 import i18n from '@/plugins/i18n';
 
 const state = {
-  locale: 'nl'
+  locale: window.navigator.language === 'fr' ? 'fr' : 'nl'
 }
 
 const getters = {
