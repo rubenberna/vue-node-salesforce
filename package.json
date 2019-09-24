@@ -5,6 +5,7 @@
   "dependencies": {
     "aws-sdk": "^2.437.0",
     "body-parser": "^1.18.3",
+    "concurrently": "^4.1.2",
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "dynamodb": "^1.2.0",
@@ -17,8 +18,10 @@
   },
   "scripts": {
     "start": "node app.js",
+    "client": "npm run serve --prefix client",
     "build-client": "cd client && npm run build",
-    "dev": "nodemon app.js",
-    "deploy": "eb deploy amazon"
+    "server": "nodemon app.js",
+    "deploy": "eb deploy amazon",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   }
 }

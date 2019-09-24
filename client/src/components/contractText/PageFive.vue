@@ -58,11 +58,11 @@
           moment.locale('nl-be');
           return moment(new Date()).format("MMM Do YYYY")
         }
-      }, 
+      },
     },
     methods: {
       ...mapActions(['updateForm']),
-      passContract(signature) {        
+      passContract(signature) {
         this.$emit('saveContract', signature)
       }
     },

@@ -14,7 +14,7 @@
     <p>{{ $t('er_is_geen_verzekering') }}</p>
     <p><b>{{ $t('9_Duur') }}</b></p>
     <p>{{ $t('deze_overeenkomst_geldt') }}</p>
-    <p>- email: customercare@easylifedc.be</p>
+    <p>- {{ $t('cancellation_app') }} <a href="http://ikzegop.easylife-dc.be/" target="_blank">http://ikzegop.easylife-dc.be/</a></p>
     <p>- {{ $t('aangetekend_schrijven_gericht_aan') }}: EasyLife customercare, Draaiboomstraat 6, 2160 Wommelgem</p>
   </div>
 </template>
